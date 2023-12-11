@@ -919,5 +919,7 @@ namespace SchoolRing
             panelMenu.Show();
             pictureBoxShowMenu.Hide();
         }
+
+        private void panelMenu_Click(object sender, EventArgs e) => pictureBoxCloseMenu_Click(sender, e);
     }
 }

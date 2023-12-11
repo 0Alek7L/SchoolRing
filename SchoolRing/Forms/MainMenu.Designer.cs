@@ -243,7 +243,7 @@
             this.labelProgram.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelProgram.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProgram.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelProgram.Location = new System.Drawing.Point(557, 147);
+            this.labelProgram.Location = new System.Drawing.Point(557, 148);
             this.labelProgram.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProgram.Name = "labelProgram";
             this.labelProgram.Size = new System.Drawing.Size(108, 30);
@@ -345,7 +345,7 @@
             this.pictureBoxProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxProgram.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxProgram.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxProgram.Image")));
-            this.pictureBoxProgram.Location = new System.Drawing.Point(569, 84);
+            this.pictureBoxProgram.Location = new System.Drawing.Point(569, 85);
             this.pictureBoxProgram.Name = "pictureBoxProgram";
             this.pictureBoxProgram.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxProgram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -514,7 +514,7 @@
             this.labelMelody.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelMelody.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMelody.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelMelody.Location = new System.Drawing.Point(213, 147);
+            this.labelMelody.Location = new System.Drawing.Point(213, 148);
             this.labelMelody.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMelody.Name = "labelMelody";
             this.labelMelody.Size = new System.Drawing.Size(108, 30);
@@ -528,7 +528,7 @@
             this.pictureBoxMelodyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxMelodyButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxMelodyButton.Image = global::SchoolRing.Properties.Resources.wired_outline_43_music_note2;
-            this.pictureBoxMelodyButton.Location = new System.Drawing.Point(225, 84);
+            this.pictureBoxMelodyButton.Location = new System.Drawing.Point(225, 85);
             this.pictureBoxMelodyButton.Name = "pictureBoxMelodyButton";
             this.pictureBoxMelodyButton.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxMelodyButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -559,7 +559,7 @@
             this.labelSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelSearch.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelSearch.Location = new System.Drawing.Point(383, 273);
+            this.labelSearch.Location = new System.Drawing.Point(383, 274);
             this.labelSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(108, 30);
@@ -573,7 +573,7 @@
             this.pictureBoxSearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxSearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSearchButton.Image = global::SchoolRing.Properties.Resources.system_solid_42_search;
-            this.pictureBoxSearchButton.Location = new System.Drawing.Point(395, 210);
+            this.pictureBoxSearchButton.Location = new System.Drawing.Point(395, 211);
             this.pictureBoxSearchButton.Name = "pictureBoxSearchButton";
             this.pictureBoxSearchButton.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxSearchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -587,7 +587,7 @@
             this.labelVacations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVacations.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVacations.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelVacations.Location = new System.Drawing.Point(378, 147);
+            this.labelVacations.Location = new System.Drawing.Point(378, 148);
             this.labelVacations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelVacations.Name = "labelVacations";
             this.labelVacations.Size = new System.Drawing.Size(114, 30);
@@ -601,7 +601,7 @@
             this.pictureBoxVacations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxVacations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxVacations.Image = global::SchoolRing.Properties.Resources.system_regular_23_calendar;
-            this.pictureBoxVacations.Location = new System.Drawing.Point(395, 84);
+            this.pictureBoxVacations.Location = new System.Drawing.Point(395, 85);
             this.pictureBoxVacations.Name = "pictureBoxVacations";
             this.pictureBoxVacations.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxVacations.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -630,7 +630,7 @@
             this.labelPrinter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelPrinter.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrinter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelPrinter.Location = new System.Drawing.Point(213, 273);
+            this.labelPrinter.Location = new System.Drawing.Point(213, 274);
             this.labelPrinter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPrinter.Name = "labelPrinter";
             this.labelPrinter.Size = new System.Drawing.Size(108, 30);
@@ -644,7 +644,7 @@
             this.pictureBoxPrinter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxPrinter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxPrinter.Image = global::SchoolRing.Properties.Resources.system_regular_50_file;
-            this.pictureBoxPrinter.Location = new System.Drawing.Point(225, 210);
+            this.pictureBoxPrinter.Location = new System.Drawing.Point(225, 211);
             this.pictureBoxPrinter.Name = "pictureBoxPrinter";
             this.pictureBoxPrinter.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxPrinter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -658,7 +658,7 @@
             this.labelCustomClasses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelCustomClasses.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCustomClasses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelCustomClasses.Location = new System.Drawing.Point(536, 269);
+            this.labelCustomClasses.Location = new System.Drawing.Point(536, 270);
             this.labelCustomClasses.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCustomClasses.Name = "labelCustomClasses";
             this.labelCustomClasses.Size = new System.Drawing.Size(146, 50);
@@ -672,7 +672,7 @@
             this.pictureBoxCustomClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxCustomClasses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxCustomClasses.Image = global::SchoolRing.Properties.Resources.idea;
-            this.pictureBoxCustomClasses.Location = new System.Drawing.Point(569, 201);
+            this.pictureBoxCustomClasses.Location = new System.Drawing.Point(569, 202);
             this.pictureBoxCustomClasses.Name = "pictureBoxCustomClasses";
             this.pictureBoxCustomClasses.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxCustomClasses.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -683,7 +683,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::SchoolRing.Properties.Resources.Screenshot_56;
-            this.pictureBox8.Location = new System.Drawing.Point(177, 55);
+            this.pictureBox8.Location = new System.Drawing.Point(177, 56);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(679, 303);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -692,6 +692,9 @@
             // 
             // panelMenu
             // 
+            this.panelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMenu.Controls.Add(this.pictureBoxNotes);
             this.panelMenu.Controls.Add(this.labelNotes);
             this.panelMenu.Controls.Add(this.pictureBoxCloseMenu);
@@ -708,18 +711,19 @@
             this.panelMenu.Controls.Add(this.pictureBoxPrinter);
             this.panelMenu.Controls.Add(this.labelProgram);
             this.panelMenu.Controls.Add(this.pictureBox8);
-            this.panelMenu.Location = new System.Drawing.Point(0, 121);
+            this.panelMenu.Location = new System.Drawing.Point(0, 115);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1027, 430);
+            this.panelMenu.Size = new System.Drawing.Size(1027, 436);
             this.panelMenu.TabIndex = 83;
             this.panelMenu.Visible = false;
+            this.panelMenu.Click += new System.EventHandler(this.panelMenu_Click);
             // 
             // pictureBoxNotes
             // 
             this.pictureBoxNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxNotes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxNotes.Image = global::SchoolRing.Properties.Resources.notes;
-            this.pictureBoxNotes.Location = new System.Drawing.Point(719, 155);
+            this.pictureBoxNotes.Location = new System.Drawing.Point(719, 156);
             this.pictureBoxNotes.Name = "pictureBoxNotes";
             this.pictureBoxNotes.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxNotes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -732,7 +736,7 @@
             this.labelNotes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelNotes.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelNotes.Location = new System.Drawing.Point(701, 218);
+            this.labelNotes.Location = new System.Drawing.Point(701, 219);
             this.labelNotes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNotes.Name = "labelNotes";
             this.labelNotes.Size = new System.Drawing.Size(108, 30);
@@ -745,7 +749,7 @@
             this.pictureBoxCloseMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxCloseMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxCloseMenu.Image = global::SchoolRing.Properties.Resources.system_solid_29_cross;
-            this.pictureBoxCloseMenu.Location = new System.Drawing.Point(776, 69);
+            this.pictureBoxCloseMenu.Location = new System.Drawing.Point(776, 70);
             this.pictureBoxCloseMenu.Name = "pictureBoxCloseMenu";
             this.pictureBoxCloseMenu.Size = new System.Drawing.Size(65, 65);
             this.pictureBoxCloseMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

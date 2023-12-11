@@ -24,6 +24,7 @@ namespace SchoolRing.IO
         internal static string filePathVacations = "vacations.txt";
         internal static string filePathTimes = "time.txt";
         internal static string filePathProperties = "properties.txt";
+        internal static string filePathNotes = "notes.txt";
 
 
         public static void SaveSchoolClasses()
@@ -76,7 +77,13 @@ namespace SchoolRing.IO
             properties.Add("customIconPath", $"{Program.customIconPath}");
             dataHandler.SaveEncryptedDataToFile(filePathProperties, properties);
         }
+        public static void SaveNotes()//TODO IMPLEMENT THIS
+        {
+            EncryptedDataHandler dataHandler = new EncryptedDataHandler();
 
+            List<INote> noteData = Program.noteRepo.GetModels().ToList();
+            dataHandler.SaveEncryptedDataToFile(filePathNotes, noteData);
+        }
         public static void ReadProperties()
         {
             EncryptedDataHandler dataHandler = new EncryptedDataHandler();
@@ -117,7 +124,6 @@ namespace SchoolRing.IO
                     else
                         schoolClass = decryptedData.First(x => x.Day == item.Day && x.Num == 1 && x.IsPurvaSmqna == false);
                     item.MergeClassWith(schoolClass);
-                    //System.Windows.Forms.MessageBox.Show(item.StartHours.ToString() + ":" + item.StartMinutes.ToString() + "   " + item.EndHours.ToString() + ":" + item.EndMinutes.ToString());
                 }
                 Program.AddRecord(item);
             }
@@ -141,6 +147,17 @@ namespace SchoolRing.IO
             Program.ShortBreakLength = decryptedDataTimes[1];
             Program.LongBreakLength = decryptedDataTimes[2];
             Program.LongBreakAfter = decryptedDataTimes[3];
+        }
+
+        public static void ReadNotes()//TODO IMPLEMENT
+        {
+            EncryptedDataHandler dataHandler = new EncryptedDataHandler();
+
+            List<INote> decryptedDataNotes = dataHandler.ReadAndDecryptDataNotes(filePathNotes);
+            foreach (var item in decryptedDataNotes)
+            {
+                Program.noteRepo.AddModel(item);
+            }
         }
     }
     public class EncryptedDataHandler
@@ -196,6 +213,22 @@ namespace SchoolRing.IO
         }
         //properties
         public void SaveEncryptedDataToFile(string filePath, Dictionary<string, string> data)
+        {
+            try
+            {
+                string serializedData = JsonConvert.SerializeObject(data);
+                string encryptedData = EncryptData(serializedData, encryptionKey);
+                File.Delete(filePath);
+                File.WriteAllText(filePath, encryptedData);
+                //System.Windows.Forms.MessageBox.Show($"Encrypted data saved to: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show($"Грешка при криптиране на данните: {ex.Message}");
+            }
+        }
+        //notes
+        public void SaveEncryptedDataToFile(string filePath, List<INote> data)
         {
             try
             {
@@ -272,6 +305,22 @@ namespace SchoolRing.IO
             {
                 System.Windows.Forms.MessageBox.Show($"Грешка при четене и декриптиране на данните: {ex.Message}");
                 return new Dictionary<string, string>();
+            }
+        }
+        //classes
+        public List<INote> ReadAndDecryptDataNotes(string filePath)
+        {
+            try
+            {
+                string encryptedData = File.ReadAllText(filePath);
+                string decryptedData = DecryptData(encryptedData, encryptionKey);
+                List<INote> schoolClasses = JsonConvert.DeserializeObject<List<INote>>(decryptedData);
+                return schoolClasses ?? new List<INote>();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show($"Грешка при четене и декриптиране на данните: {ex.Message}");
+                return new List<INote>();
             }
         }
         private string EncryptData(string data, string key)

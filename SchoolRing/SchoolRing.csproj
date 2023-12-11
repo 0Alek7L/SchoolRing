@@ -164,7 +164,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
+    <Compile Include="Models\Controller.cs" />
     <Compile Include="Forms\CustomClasses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +179,7 @@
     </Compile>
     <Compile Include="Holidays.cs" />
     <Compile Include="Interfaces\IController.cs" />
+    <Compile Include="Interfaces\INote.cs" />
     <Compile Include="Interfaces\ISchoolClass.cs" />
     <Compile Include="Interfaces\IVacationalDays.cs" />
     <Compile Include="IO\SaveTheData.cs" />
@@ -207,13 +208,16 @@
     <Compile Include="Forms\Printer.Designer.cs">
       <DependentUpon>Printer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Repository\ISchoolClassRepository.cs" />
-    <Compile Include="Repository\IVacationalDaysRepository.cs" />
-    <Compile Include="Repository\IVDRepo.cs" />
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Repository\Interfaces\INoteRepository.cs" />
+    <Compile Include="Repository\Interfaces\IRepository.cs" />
+    <Compile Include="Repository\Interfaces\ISchoolClassRepository.cs" />
+    <Compile Include="Repository\Interfaces\IVacationalDaysRepository.cs" />
+    <Compile Include="Repository\Interfaces\IVDRepo.cs" />
+    <Compile Include="Repository\NoteRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\VacationalDaysRepository.cs" />
-    <Compile Include="SchoolClass.cs" />
+    <Compile Include="Models\SchoolClass.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,7 +251,7 @@
       <DependentUpon>SetUp.cs</DependentUpon>
     </Compile>
     <Compile Include="TimeForClockAndText.cs" />
-    <Compile Include="VacationalDays.cs" />
+    <Compile Include="Models\VacationalDays.cs" />
     <Compile Include="Forms\Vacations.cs">
       <SubType>Form</SubType>
     </Compile>

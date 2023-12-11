@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolRing.Repository
 {
-    public interface IVDRepo<T>
+    internal interface IVDRepo<T>
     {
         IReadOnlyCollection<T> GetModels();
         void AddModel(T model);

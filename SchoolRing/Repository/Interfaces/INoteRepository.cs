@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace SchoolRing.Repository
 {
-    public interface IRepository<T>
+    internal interface INoteRepository<T>
     {
         IReadOnlyCollection<T> GetModels();
         void AddModel(T model);
         void RemoveModel(T model);
-        T FirstModel(string day, int num, bool isPurvaSmqna);
+        T FirstModel(DateTime _date, int _classNum, bool _purva);
         void UpdateModel(T model);
-        bool IsThereAModel(string day, int num, bool isPurvaSmqna);
-        void ClearTheSchedule();
+        bool IsThereAModel(DateTime _date, int _classNum, bool _purva);
+        bool IsThereAModel(string _title);
     }
 }

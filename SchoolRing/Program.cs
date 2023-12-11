@@ -41,6 +41,7 @@ namespace SchoolRing
 
                 controller = new Controller();
                 vdRepo = new VacationalDaysRepository();
+                noteRepo = new NoteRepository();
 
                 if (File.Exists(SaveTheData.filePathProperties))
                 {
@@ -134,6 +135,7 @@ namespace SchoolRing
         public static TimeForClockAndText time;
         static System.Windows.Forms.Timer timer;
         public static IVacationalDaysRepository vdRepo;
+        public static INoteRepository<INote> noteRepo;
         private static IController controller;
         //ЗА БУТОНА ВРЪЩАНЕ НАЗАД
         public static Stack<Form> LastForms = new Stack<Form>();
