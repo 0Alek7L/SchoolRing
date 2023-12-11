@@ -73,6 +73,10 @@
             this.pictureBoxPrinter = new System.Windows.Forms.PictureBox();
             this.labelCustomClasses = new System.Windows.Forms.Label();
             this.pictureBoxCustomClasses = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.pictureBoxCloseMenu = new System.Windows.Forms.PictureBox();
+            this.pictureBoxShowMenu = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelpClassesLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelpCurrentClass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelpNextClass)).BeginInit();
@@ -93,6 +97,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVacations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrinter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomClasses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloseMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -232,7 +240,7 @@
             this.labelProgram.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelProgram.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProgram.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelProgram.Location = new System.Drawing.Point(323, 75);
+            this.labelProgram.Location = new System.Drawing.Point(633, 154);
             this.labelProgram.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProgram.Name = "labelProgram";
             this.labelProgram.Size = new System.Drawing.Size(108, 30);
@@ -334,7 +342,7 @@
             this.pictureBoxProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxProgram.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxProgram.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxProgram.Image")));
-            this.pictureBoxProgram.Location = new System.Drawing.Point(335, 12);
+            this.pictureBoxProgram.Location = new System.Drawing.Point(645, 91);
             this.pictureBoxProgram.Name = "pictureBoxProgram";
             this.pictureBoxProgram.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxProgram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -503,7 +511,7 @@
             this.labelMelody.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelMelody.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMelody.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelMelody.Location = new System.Drawing.Point(6, 75);
+            this.labelMelody.Location = new System.Drawing.Point(289, 154);
             this.labelMelody.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMelody.Name = "labelMelody";
             this.labelMelody.Size = new System.Drawing.Size(108, 30);
@@ -517,7 +525,7 @@
             this.pictureBoxMelodyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxMelodyButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxMelodyButton.Image = global::SchoolRing.Properties.Resources.wired_outline_43_music_note2;
-            this.pictureBoxMelodyButton.Location = new System.Drawing.Point(18, 12);
+            this.pictureBoxMelodyButton.Location = new System.Drawing.Point(301, 91);
             this.pictureBoxMelodyButton.Name = "pictureBoxMelodyButton";
             this.pictureBoxMelodyButton.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxMelodyButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -548,7 +556,7 @@
             this.labelSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelSearch.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelSearch.Location = new System.Drawing.Point(735, 75);
+            this.labelSearch.Location = new System.Drawing.Point(459, 280);
             this.labelSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(108, 30);
@@ -562,7 +570,7 @@
             this.pictureBoxSearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxSearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSearchButton.Image = global::SchoolRing.Properties.Resources.system_solid_42_search;
-            this.pictureBoxSearchButton.Location = new System.Drawing.Point(747, 12);
+            this.pictureBoxSearchButton.Location = new System.Drawing.Point(471, 217);
             this.pictureBoxSearchButton.Name = "pictureBoxSearchButton";
             this.pictureBoxSearchButton.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxSearchButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -576,7 +584,7 @@
             this.labelVacations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVacations.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVacations.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelVacations.Location = new System.Drawing.Point(160, 75);
+            this.labelVacations.Location = new System.Drawing.Point(454, 154);
             this.labelVacations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelVacations.Name = "labelVacations";
             this.labelVacations.Size = new System.Drawing.Size(114, 30);
@@ -590,7 +598,7 @@
             this.pictureBoxVacations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxVacations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxVacations.Image = global::SchoolRing.Properties.Resources.system_regular_23_calendar;
-            this.pictureBoxVacations.Location = new System.Drawing.Point(177, 12);
+            this.pictureBoxVacations.Location = new System.Drawing.Point(471, 91);
             this.pictureBoxVacations.Name = "pictureBoxVacations";
             this.pictureBoxVacations.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxVacations.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -619,7 +627,7 @@
             this.labelPrinter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelPrinter.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrinter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelPrinter.Location = new System.Drawing.Point(583, 75);
+            this.labelPrinter.Location = new System.Drawing.Point(289, 280);
             this.labelPrinter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPrinter.Name = "labelPrinter";
             this.labelPrinter.Size = new System.Drawing.Size(108, 30);
@@ -633,7 +641,7 @@
             this.pictureBoxPrinter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxPrinter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxPrinter.Image = global::SchoolRing.Properties.Resources.system_regular_50_file;
-            this.pictureBoxPrinter.Location = new System.Drawing.Point(595, 12);
+            this.pictureBoxPrinter.Location = new System.Drawing.Point(301, 217);
             this.pictureBoxPrinter.Name = "pictureBoxPrinter";
             this.pictureBoxPrinter.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxPrinter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -647,7 +655,7 @@
             this.labelCustomClasses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelCustomClasses.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCustomClasses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelCustomClasses.Location = new System.Drawing.Point(860, 62);
+            this.labelCustomClasses.Location = new System.Drawing.Point(613, 254);
             this.labelCustomClasses.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCustomClasses.Name = "labelCustomClasses";
             this.labelCustomClasses.Size = new System.Drawing.Size(146, 50);
@@ -661,7 +669,7 @@
             this.pictureBoxCustomClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxCustomClasses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxCustomClasses.Image = global::SchoolRing.Properties.Resources.wired_outline_49_plus_circle;
-            this.pictureBoxCustomClasses.Location = new System.Drawing.Point(892, 12);
+            this.pictureBoxCustomClasses.Location = new System.Drawing.Point(645, 204);
             this.pictureBoxCustomClasses.Name = "pictureBoxCustomClasses";
             this.pictureBoxCustomClasses.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxCustomClasses.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -669,24 +677,74 @@
             this.pictureBoxCustomClasses.TabStop = false;
             this.pictureBoxCustomClasses.Click += new System.EventHandler(this.pictureBoxCustomClasses_Click);
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::SchoolRing.Properties.Resources.Screenshot_56;
+            this.pictureBox8.Location = new System.Drawing.Point(177, 55);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(679, 303);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 82;
+            this.pictureBox8.TabStop = false;
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.Controls.Add(this.pictureBoxCloseMenu);
+            this.panelMenu.Controls.Add(this.pictureBoxMelodyButton);
+            this.panelMenu.Controls.Add(this.labelMelody);
+            this.panelMenu.Controls.Add(this.labelCustomClasses);
+            this.panelMenu.Controls.Add(this.pictureBoxVacations);
+            this.panelMenu.Controls.Add(this.pictureBoxCustomClasses);
+            this.panelMenu.Controls.Add(this.labelVacations);
+            this.panelMenu.Controls.Add(this.labelPrinter);
+            this.panelMenu.Controls.Add(this.labelSearch);
+            this.panelMenu.Controls.Add(this.pictureBoxProgram);
+            this.panelMenu.Controls.Add(this.pictureBoxSearchButton);
+            this.panelMenu.Controls.Add(this.pictureBoxPrinter);
+            this.panelMenu.Controls.Add(this.labelProgram);
+            this.panelMenu.Controls.Add(this.pictureBox8);
+            this.panelMenu.Location = new System.Drawing.Point(0, 119);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(1027, 430);
+            this.panelMenu.TabIndex = 83;
+            this.panelMenu.Visible = false;
+            // 
+            // pictureBoxCloseMenu
+            // 
+            this.pictureBoxCloseMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
+            this.pictureBoxCloseMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxCloseMenu.Image = global::SchoolRing.Properties.Resources.system_solid_29_cross;
+            this.pictureBoxCloseMenu.Location = new System.Drawing.Point(776, 69);
+            this.pictureBoxCloseMenu.Name = "pictureBoxCloseMenu";
+            this.pictureBoxCloseMenu.Size = new System.Drawing.Size(65, 65);
+            this.pictureBoxCloseMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCloseMenu.TabIndex = 83;
+            this.pictureBoxCloseMenu.TabStop = false;
+            this.pictureBoxCloseMenu.Click += new System.EventHandler(this.pictureBoxCloseMenu_Click);
+            // 
+            // pictureBoxShowMenu
+            // 
+            this.pictureBoxShowMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
+            this.pictureBoxShowMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxShowMenu.Image = global::SchoolRing.Properties.Resources.menu_button_of_three_horizontal_lines;
+            this.pictureBoxShowMenu.Location = new System.Drawing.Point(920, 18);
+            this.pictureBoxShowMenu.Name = "pictureBoxShowMenu";
+            this.pictureBoxShowMenu.Size = new System.Drawing.Size(85, 80);
+            this.pictureBoxShowMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxShowMenu.TabIndex = 84;
+            this.pictureBoxShowMenu.TabStop = false;
+            this.pictureBoxShowMenu.Click += new System.EventHandler(this.pictureBoxShowMenu_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(1027, 631);
-            this.Controls.Add(this.labelCustomClasses);
-            this.Controls.Add(this.pictureBoxCustomClasses);
-            this.Controls.Add(this.labelPrinter);
-            this.Controls.Add(this.pictureBoxPrinter);
+            this.Controls.Add(this.pictureBoxShowMenu);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.labelForVacation);
-            this.Controls.Add(this.labelVacations);
-            this.Controls.Add(this.pictureBoxVacations);
-            this.Controls.Add(this.labelSearch);
-            this.Controls.Add(this.pictureBoxSearchButton);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.pictureBoxMelodyButton);
-            this.Controls.Add(this.labelMelody);
             this.Controls.Add(this.labelMergeClasses);
             this.Controls.Add(this.pictureBoxRefresh);
             this.Controls.Add(this.pictureBoxHelpTimeLeft);
@@ -696,8 +754,6 @@
             this.Controls.Add(this.labelForHolidays);
             this.Controls.Add(this.pictureBoxForHolidays);
             this.Controls.Add(this.labelChangeClassLength);
-            this.Controls.Add(this.labelProgram);
-            this.Controls.Add(this.pictureBoxProgram);
             this.Controls.Add(this.labelShowTimeLeft);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.labelShowClassesLeft);
@@ -738,6 +794,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVacations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrinter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCustomClasses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloseMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -788,5 +848,9 @@
         private System.Windows.Forms.ToolStripMenuItem eDITToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dEFAULTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cUSTOMToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.PictureBox pictureBoxCloseMenu;
+        private System.Windows.Forms.PictureBox pictureBoxShowMenu;
     }
 }

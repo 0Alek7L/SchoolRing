@@ -517,5 +517,14 @@
   <ItemGroup>
     <None Include="Resources\wired-outline-50-minus-circle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-button-of-three-horizontal-lines.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

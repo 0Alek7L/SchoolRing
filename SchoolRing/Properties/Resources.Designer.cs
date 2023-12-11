@@ -153,6 +153,26 @@ namespace SchoolRing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menu {
+            get {
+                object obj = ResourceManager.GetObject("menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_button_of_three_horizontal_lines {
+            get {
+                object obj = ResourceManager.GetObject("menu-button-of-three-horizontal-lines", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap newSolidCheck {
             get {
                 object obj = ResourceManager.GetObject("newSolidCheck", resourceCulture);
@@ -467,6 +487,16 @@ namespace SchoolRing.Properties {
         internal static System.Drawing.Bitmap Screenshot_54 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot_54", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_56 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_56", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

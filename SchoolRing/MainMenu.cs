@@ -907,5 +907,17 @@ namespace SchoolRing
             Program.ChoosePathForCustomIcon(contextMenuStrip1);
             Program.ChangeCustomIcon(pictureBox3, true);
         }
+
+        private void pictureBoxCloseMenu_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+            pictureBoxShowMenu.Show();
+        }
+
+        private void pictureBoxShowMenu_Click(object sender, EventArgs e)
+        {
+            panelMenu.Show();
+            pictureBoxShowMenu.Hide();
+        }
     }
 }
