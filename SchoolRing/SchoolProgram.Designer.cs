@@ -522,6 +522,7 @@
             // buttonSaveRecord
             // 
             this.buttonSaveRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(108)))), ((int)(((byte)(6)))));
+            this.buttonSaveRecord.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSaveRecord.Font = new System.Drawing.Font("Jura", 28F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.buttonSaveRecord.ForeColor = System.Drawing.Color.White;
             this.buttonSaveRecord.Location = new System.Drawing.Point(571, 492);
@@ -535,6 +536,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = global::SchoolRing.Properties.Resources.flatArrowPNG;
             this.pictureBox7.Location = new System.Drawing.Point(662, 134);
             this.pictureBox7.Name = "pictureBox7";
@@ -547,6 +549,7 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox8.Image = global::SchoolRing.Properties.Resources.flatArrowPNGLeft;
             this.pictureBox8.Location = new System.Drawing.Point(303, 134);
             this.pictureBox8.Name = "pictureBox8";
@@ -559,6 +562,7 @@
             // buttonContinueToMainMenu
             // 
             this.buttonContinueToMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(191)))), ((int)(((byte)(9)))));
+            this.buttonContinueToMainMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonContinueToMainMenu.Font = new System.Drawing.Font("Jura", 27F, System.Drawing.FontStyle.Bold);
             this.buttonContinueToMainMenu.ForeColor = System.Drawing.Color.White;
             this.buttonContinueToMainMenu.Location = new System.Drawing.Point(791, 566);
@@ -572,6 +576,7 @@
             // buttonClearTheRepo
             // 
             this.buttonClearTheRepo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(108)))), ((int)(((byte)(6)))));
+            this.buttonClearTheRepo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClearTheRepo.Font = new System.Drawing.Font("Jura", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.buttonClearTheRepo.ForeColor = System.Drawing.Color.White;
             this.buttonClearTheRepo.Location = new System.Drawing.Point(100, 566);

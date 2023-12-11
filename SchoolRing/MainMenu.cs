@@ -230,19 +230,31 @@ namespace SchoolRing
             //Merging classes label show and hide
             if (Program.WithClassSchedule)
             {
+                //принтер
                 pictureBoxPrinter.Show();
                 labelPrinter.Show();
+                //търсачка
                 pictureBoxSearchButton.Show();
                 labelSearch.Show();
+                //сливане на часове
                 labelMergeClasses.Show();
+                //занимания по интереси
+                pictureBoxCustomClasses.Show();
+                labelCustomClasses.Show();
             }
             else
             {
+                //принтер
                 pictureBoxPrinter.Hide();
                 labelPrinter.Hide();
+                //търсачка
                 pictureBoxSearchButton.Hide();
                 labelSearch.Hide();
+                //сливане на часове
                 labelMergeClasses.Hide();
+                //занимания по интереси
+                pictureBoxCustomClasses.Hide();
+                labelCustomClasses.Hide();
             }
         }
 

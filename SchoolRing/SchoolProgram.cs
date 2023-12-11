@@ -140,6 +140,7 @@ namespace SchoolRing
                     throw new ArgumentException("Моля, изберете клас!");
                 if (comboBoxClassParalelka.SelectedIndex == -1 && !isFree)
                     throw new ArgumentException("Моля, изберете, паралелка!");
+                
                 if (isFree)
                 {
                     AddToListBox(list, purvaSmqna, true, int.Parse(comboBox1ClassNumber.Text), 0, null);
@@ -151,6 +152,7 @@ namespace SchoolRing
                     ShowCheck();
                 }
                 buttonSetFreeClass_Click(sender, e);
+                comboBox1ClassNumber.SelectedIndex = -1;
             }
             catch (FormatException)
             {
@@ -395,10 +397,14 @@ namespace SchoolRing
                 comboBox1ClassNumber.SelectedIndex = num - 1;
                 comboBoxClassGrade.SelectedIndex = selectedIndexGrade;
                 comboBoxClassParalelka.SelectedIndex = selectedIndexParalelka;
+
             }
             else
             {
                 comboBox1ClassNumber.SelectedIndex = num - 1;
+                buttonSetFreeClass.ForeColor = Color.Black;
+                buttonSetFreeClass.Font = new Font(buttonSetFreeClass.Font, FontStyle.Bold);
+                isFree = true;
             }
         }
 
