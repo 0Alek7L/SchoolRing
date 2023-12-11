@@ -1,4 +1,5 @@
 ﻿using NAudio.Wave;
+using SchoolRing.Forms;
 using SchoolRing.Interfaces;
 using SchoolRing.IO;
 using System;
@@ -817,13 +818,7 @@ namespace SchoolRing
 
         public void pictureBoxRefresh_Click(object sender, EventArgs e)
         {
-            pictureBoxRefresh.Enabled = false;
-            pictureBoxRefresh.Hide();
-            MainMenu mainmenu = new MainMenu();
-            mainmenu.Show();
-            timerForMelody.Stop();
-            timer.Stop();
-            this.Hide();
+            Application.Restart();
         }
 
         private void labelMergeClasses_Click(object sender, EventArgs e)
@@ -921,5 +916,13 @@ namespace SchoolRing
         }
 
         private void panelMenu_Click(object sender, EventArgs e) => pictureBoxCloseMenu_Click(sender, e);
+
+        private void pictureBoxNotes_Click(object sender, EventArgs e)
+        {
+            Program.LastForms.Push(this);
+            Notes notes = new Notes();
+            notes.Show();
+            this.Hide();
+        }
     }
 }

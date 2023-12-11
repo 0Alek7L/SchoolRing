@@ -76,7 +76,6 @@ namespace SchoolRing
                 timer.Interval = 50;
                 timer.Tick += Timer_Tick;
                 timer.Tick += Timer_Tick1;
-                timer.Tick += Timer_Tick2;
                 timer.Start();
                 try
                 {
@@ -337,27 +336,6 @@ namespace SchoolRing
                     ISchoolClass schoolClass = new SchoolClass(day, j, false, true, 0, null, startH, startM, endH, endM);
                     AddRecord(schoolClass);
                 }
-            }
-        }
-
-        private static void Timer_Tick2(object sender, EventArgs e)
-        {
-            if (HaveBeenIntoMainMenu)
-            {
-                if (LastForms != null && LastForms.Count > 1 && MainMenu.Instance.Visible == false && MainMenu.Instance != LastForms.Peek())
-                {
-                    MainMenu.Instance.Close();
-
-                }
-                if (IsFormOpen(typeof(MainMenu)))
-                {
-                    return;
-                }
-
-                MainMenu.Instance.Show();
-
-                if (Program.LastForms.Count < 1)
-                    LastForms.Push(MainMenu.Instance);
             }
         }
 

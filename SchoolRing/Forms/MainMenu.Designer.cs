@@ -711,7 +711,7 @@
             this.panelMenu.Controls.Add(this.pictureBoxPrinter);
             this.panelMenu.Controls.Add(this.labelProgram);
             this.panelMenu.Controls.Add(this.pictureBox8);
-            this.panelMenu.Location = new System.Drawing.Point(0, 115);
+            this.panelMenu.Location = new System.Drawing.Point(0, 119);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(1027, 436);
             this.panelMenu.TabIndex = 83;
@@ -729,6 +729,7 @@
             this.pictureBoxNotes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxNotes.TabIndex = 84;
             this.pictureBoxNotes.TabStop = false;
+            this.pictureBoxNotes.Click += new System.EventHandler(this.pictureBoxNotes_Click);
             // 
             // labelNotes
             // 
@@ -743,6 +744,7 @@
             this.labelNotes.TabIndex = 85;
             this.labelNotes.Text = "ЗАПИСКИ";
             this.labelNotes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelNotes.Click += new System.EventHandler(this.pictureBoxNotes_Click);
             // 
             // pictureBoxCloseMenu
             // 
@@ -805,6 +807,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

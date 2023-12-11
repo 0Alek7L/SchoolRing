@@ -19,7 +19,7 @@ namespace SchoolRing.IO
 {
     public class SaveTheData
     {
-        private static string secretKey = "2B7E151628AED2A6";
+        //private static string secretKey = "2B7E151628AED2A6";
         internal static string filePath = "models.txt";
         internal static string filePathVacations = "vacations.txt";
         internal static string filePathTimes = "time.txt";

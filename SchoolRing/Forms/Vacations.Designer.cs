@@ -73,10 +73,9 @@
             // 
             pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            pictureBox5.Location = new System.Drawing.Point(0, 139);
-            pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            pictureBox5.Location = new System.Drawing.Point(0, 113);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new System.Drawing.Size(100, 81);
+            pictureBox5.Size = new System.Drawing.Size(75, 66);
             pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 61;
             pictureBox5.TabStop = false;
@@ -90,9 +89,10 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Jura", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.label1.Location = new System.Drawing.Point(19, 732);
+            this.label1.Location = new System.Drawing.Point(14, 595);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 27);
+            this.label1.Size = new System.Drawing.Size(64, 22);
             this.label1.TabIndex = 63;
             this.label1.Text = "ПОМОЩ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,10 +104,9 @@
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::SchoolRing.Properties.Resources.system_solid_140_help_center;
-            this.pictureBox6.Location = new System.Drawing.Point(16, 673);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(12, 547);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(84, 62);
+            this.pictureBox6.Size = new System.Drawing.Size(63, 50);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 62;
             this.pictureBox6.TabStop = false;
@@ -120,9 +119,10 @@
             this.labelDayOfWeek.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelDayOfWeek.Font = new System.Drawing.Font("Jura", 37F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDayOfWeek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelDayOfWeek.Location = new System.Drawing.Point(319, 676);
+            this.labelDayOfWeek.Location = new System.Drawing.Point(239, 549);
+            this.labelDayOfWeek.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDayOfWeek.Name = "labelDayOfWeek";
-            this.labelDayOfWeek.Size = new System.Drawing.Size(725, 87);
+            this.labelDayOfWeek.Size = new System.Drawing.Size(544, 71);
             this.labelDayOfWeek.TabIndex = 60;
             this.labelDayOfWeek.Text = "dayOfWeek";
             this.labelDayOfWeek.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -134,10 +134,10 @@
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox3.ContextMenuStrip = this.contextMenuStrip1;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(631, 9);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(473, 7);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(103, 110);
+            this.pictureBox3.Size = new System.Drawing.Size(77, 89);
             this.pictureBox3.TabIndex = 59;
             this.pictureBox3.TabStop = false;
             // 
@@ -150,7 +150,7 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 36);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(93, 30);
             // 
             // eDITToolStripMenuItem
             // 
@@ -158,20 +158,20 @@
             this.dEFAULTToolStripMenuItem,
             this.cUSTOMToolStripMenuItem});
             this.eDITToolStripMenuItem.Name = "eDITToolStripMenuItem";
-            this.eDITToolStripMenuItem.Size = new System.Drawing.Size(103, 32);
+            this.eDITToolStripMenuItem.Size = new System.Drawing.Size(92, 26);
             this.eDITToolStripMenuItem.Text = "EDIT";
             // 
             // dEFAULTToolStripMenuItem
             // 
             this.dEFAULTToolStripMenuItem.Name = "dEFAULTToolStripMenuItem";
-            this.dEFAULTToolStripMenuItem.Size = new System.Drawing.Size(183, 32);
+            this.dEFAULTToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.dEFAULTToolStripMenuItem.Text = "DEFAULT";
             this.dEFAULTToolStripMenuItem.Click += new System.EventHandler(this.dEFAULTToolStripMenuItem_Click);
             // 
             // cUSTOMToolStripMenuItem
             // 
             this.cUSTOMToolStripMenuItem.Name = "cUSTOMToolStripMenuItem";
-            this.cUSTOMToolStripMenuItem.Size = new System.Drawing.Size(183, 32);
+            this.cUSTOMToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.cUSTOMToolStripMenuItem.Text = "CUSTOM";
             this.cUSTOMToolStripMenuItem.Click += new System.EventHandler(this.cUSTOMToolStripMenuItem_Click);
             // 
@@ -179,10 +179,10 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 673);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 547);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1369, 103);
+            this.pictureBox2.Size = new System.Drawing.Size(1027, 84);
             this.pictureBox2.TabIndex = 58;
             this.pictureBox2.TabStop = false;
             // 
@@ -191,9 +191,8 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1369, 139);
+            this.pictureBox1.Size = new System.Drawing.Size(1027, 113);
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
             // 
@@ -207,21 +206,19 @@
             this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dateTimePicker1.Font = new System.Drawing.Font("Jura", 16F, System.Drawing.FontStyle.Bold);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(248, 380);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(186, 309);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker1.Size = new System.Drawing.Size(509, 39);
+            this.dateTimePicker1.Size = new System.Drawing.Size(383, 33);
             this.dateTimePicker1.TabIndex = 64;
             this.dateTimePicker1.Value = new System.DateTime(2023, 11, 13, 10, 33, 26, 0);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::SchoolRing.Properties.Resources.Screenshot_52;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 347);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(18, 282);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(739, 254);
+            this.pictureBox4.Size = new System.Drawing.Size(554, 206);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 65;
             this.pictureBox4.TabStop = false;
@@ -236,22 +233,20 @@
             this.dateTimePicker2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dateTimePicker2.Font = new System.Drawing.Font("Jura", 16F, System.Drawing.FontStyle.Bold);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(248, 455);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker2.Location = new System.Drawing.Point(186, 370);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(509, 39);
+            this.dateTimePicker2.Size = new System.Drawing.Size(383, 33);
             this.dateTimePicker2.TabIndex = 66;
             this.dateTimePicker2.Value = new System.DateTime(2023, 11, 12, 16, 7, 19, 0);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Jura", 16F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(248, 534);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(186, 434);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox1.Size = new System.Drawing.Size(509, 40);
+            this.textBox1.Size = new System.Drawing.Size(383, 33);
             this.textBox1.TabIndex = 67;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -259,10 +254,9 @@
             // 
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = global::SchoolRing.Properties.Resources.add;
-            this.pictureBox7.Location = new System.Drawing.Point(783, 492);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Location = new System.Drawing.Point(587, 400);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(107, 98);
+            this.pictureBox7.Size = new System.Drawing.Size(80, 80);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 68;
             this.pictureBox7.TabStop = false;
@@ -272,10 +266,9 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::SchoolRing.Properties.Resources.Screenshot_49;
-            this.pictureBox8.Location = new System.Drawing.Point(903, 220);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Location = new System.Drawing.Point(677, 179);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(447, 380);
+            this.pictureBox8.Size = new System.Drawing.Size(335, 309);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 69;
             this.pictureBox8.TabStop = false;
@@ -289,12 +282,11 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.HorizontalScrollbar = true;
             this.listBox1.IntegralHeight = false;
-            this.listBox1.ItemHeight = 45;
-            this.listBox1.Location = new System.Drawing.Point(913, 235);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.ItemHeight = 36;
+            this.listBox1.Location = new System.Drawing.Point(685, 191);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBox1.Size = new System.Drawing.Size(427, 343);
+            this.listBox1.Size = new System.Drawing.Size(320, 279);
             this.listBox1.TabIndex = 70;
             // 
             // comboBox1
@@ -303,10 +295,9 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox1.Font = new System.Drawing.Font("Jura", 20.25F, System.Drawing.FontStyle.Bold);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(244, 170);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(183, 138);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(513, 53);
+            this.comboBox1.Size = new System.Drawing.Size(386, 44);
             this.comboBox1.TabIndex = 71;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -314,10 +305,9 @@
             // 
             this.label2.Font = new System.Drawing.Font("Jura", 16F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
-            this.label2.Location = new System.Drawing.Point(241, 213);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(181, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(515, 78);
+            this.label2.Size = new System.Drawing.Size(386, 63);
             this.label2.TabIndex = 72;
             this.label2.Text = "Изберете съществуваща ваканция от тук";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -326,10 +316,9 @@
             // 
             this.pictureBoxRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxRemove.Image = global::SchoolRing.Properties.Resources.removeNEW;
-            this.pictureBoxRemove.Location = new System.Drawing.Point(783, 379);
-            this.pictureBoxRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxRemove.Location = new System.Drawing.Point(587, 308);
             this.pictureBoxRemove.Name = "pictureBoxRemove";
-            this.pictureBoxRemove.Size = new System.Drawing.Size(107, 98);
+            this.pictureBoxRemove.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxRemove.TabIndex = 73;
             this.pictureBoxRemove.TabStop = false;
@@ -341,10 +330,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Jura", 18F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
-            this.label3.Location = new System.Drawing.Point(1035, 178);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(776, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 40);
+            this.label3.Size = new System.Drawing.Size(143, 31);
             this.label3.TabIndex = 74;
             this.label3.Text = "ВАКАНЦИИ:";
             // 
@@ -352,10 +340,9 @@
             // 
             this.label4.Font = new System.Drawing.Font("Jura Light", 24F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
-            this.label4.Location = new System.Drawing.Point(25, 523);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(19, 425);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(216, 55);
+            this.label4.Size = new System.Drawing.Size(162, 45);
             this.label4.TabIndex = 75;
             this.label4.Text = "ИМЕ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -364,10 +351,9 @@
             // 
             this.pictureBoxClearTheCB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxClearTheCB.Image = global::SchoolRing.Properties.Resources.wired_outline_50_minus_circle;
-            this.pictureBoxClearTheCB.Location = new System.Drawing.Point(765, 158);
-            this.pictureBoxClearTheCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxClearTheCB.Location = new System.Drawing.Point(574, 128);
             this.pictureBoxClearTheCB.Name = "pictureBoxClearTheCB";
-            this.pictureBoxClearTheCB.Size = new System.Drawing.Size(97, 82);
+            this.pictureBoxClearTheCB.Size = new System.Drawing.Size(73, 67);
             this.pictureBoxClearTheCB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxClearTheCB.TabIndex = 76;
             this.pictureBoxClearTheCB.TabStop = false;
@@ -382,9 +368,9 @@
             // 
             // Vacations
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1369, 777);
+            this.ClientSize = new System.Drawing.Size(1027, 631);
             this.Controls.Add(this.pictureBoxClearTheCB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
@@ -405,7 +391,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Vacations";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
