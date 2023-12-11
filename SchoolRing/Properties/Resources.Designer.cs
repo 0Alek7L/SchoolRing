@@ -191,6 +191,16 @@ namespace SchoolRing.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notes {
+            get {
+                object obj = ResourceManager.GetObject("notes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copyright 2019 The Jura Project Authors (https://github.com/ossobuffo/jura)
         ///
         ///This Font Software is licensed under the SIL Open Font License, Version 1.1.

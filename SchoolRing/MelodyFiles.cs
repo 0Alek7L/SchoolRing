@@ -98,7 +98,6 @@ namespace SchoolRing
             }
 
         }
-
         public static void Stop()
         {
             if (isPlayingStart || isPlayingEnd)
