@@ -655,7 +655,7 @@
             this.labelCustomClasses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelCustomClasses.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCustomClasses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelCustomClasses.Location = new System.Drawing.Point(613, 254);
+            this.labelCustomClasses.Location = new System.Drawing.Point(612, 276);
             this.labelCustomClasses.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCustomClasses.Name = "labelCustomClasses";
             this.labelCustomClasses.Size = new System.Drawing.Size(146, 50);
@@ -668,8 +668,8 @@
             // 
             this.pictureBoxCustomClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxCustomClasses.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxCustomClasses.Image = global::SchoolRing.Properties.Resources.wired_outline_49_plus_circle;
-            this.pictureBoxCustomClasses.Location = new System.Drawing.Point(645, 204);
+            this.pictureBoxCustomClasses.Image = global::SchoolRing.Properties.Resources.idea;
+            this.pictureBoxCustomClasses.Location = new System.Drawing.Point(645, 208);
             this.pictureBoxCustomClasses.Name = "pictureBoxCustomClasses";
             this.pictureBoxCustomClasses.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxCustomClasses.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -727,9 +727,9 @@
             this.pictureBoxShowMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxShowMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxShowMenu.Image = global::SchoolRing.Properties.Resources.menu_button_of_three_horizontal_lines;
-            this.pictureBoxShowMenu.Location = new System.Drawing.Point(920, 18);
+            this.pictureBoxShowMenu.Location = new System.Drawing.Point(926, 22);
             this.pictureBoxShowMenu.Name = "pictureBoxShowMenu";
-            this.pictureBoxShowMenu.Size = new System.Drawing.Size(85, 80);
+            this.pictureBoxShowMenu.Size = new System.Drawing.Size(68, 69);
             this.pictureBoxShowMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxShowMenu.TabIndex = 84;
             this.pictureBoxShowMenu.TabStop = false;
