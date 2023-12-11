@@ -165,16 +165,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller.cs" />
-    <Compile Include="CustomClasses.cs">
+    <Compile Include="Forms\CustomClasses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomClasses.Designer.cs">
+    <Compile Include="Forms\CustomClasses.Designer.cs">
       <DependentUpon>CustomClasses.cs</DependentUpon>
     </Compile>
-    <Compile Include="Help.cs">
+    <Compile Include="Forms\Help.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Help.Designer.cs">
+    <Compile Include="Forms\Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
     <Compile Include="Holidays.cs" />
@@ -182,29 +182,29 @@
     <Compile Include="Interfaces\ISchoolClass.cs" />
     <Compile Include="Interfaces\IVacationalDays.cs" />
     <Compile Include="IO\SaveTheData.cs" />
-    <Compile Include="MainMenu.cs">
+    <Compile Include="Forms\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
+    <Compile Include="Forms\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Melody.cs">
+    <Compile Include="Forms\Melody.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Melody.Designer.cs">
+    <Compile Include="Forms\Melody.Designer.cs">
       <DependentUpon>Melody.cs</DependentUpon>
     </Compile>
     <Compile Include="MelodyFiles.cs" />
-    <Compile Include="MergeClassesForm.cs">
+    <Compile Include="Forms\MergeClassesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MergeClassesForm.Designer.cs">
+    <Compile Include="Forms\MergeClassesForm.Designer.cs">
       <DependentUpon>MergeClassesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Printer.cs">
+    <Compile Include="Forms\Printer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Printer.Designer.cs">
+    <Compile Include="Forms\Printer.Designer.cs">
       <DependentUpon>Printer.cs</DependentUpon>
     </Compile>
     <Compile Include="Repository\IRepository.cs" />
@@ -214,74 +214,74 @@
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\VacationalDaysRepository.cs" />
     <Compile Include="SchoolClass.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="SchoolProgram.cs">
+    <Compile Include="Forms\SchoolProgram.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SchoolProgram.Designer.cs">
+    <Compile Include="Forms\SchoolProgram.Designer.cs">
       <DependentUpon>SchoolProgram.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchClasses.cs">
+    <Compile Include="Forms\SearchClasses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchClasses.Designer.cs">
+    <Compile Include="Forms\SearchClasses.Designer.cs">
       <DependentUpon>SearchClasses.cs</DependentUpon>
     </Compile>
-    <Compile Include="Templates.cs">
+    <Compile Include="Forms\Templates.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Templates.Designer.cs">
+    <Compile Include="Forms\Templates.Designer.cs">
       <DependentUpon>Templates.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SetUp.cs">
+    <Compile Include="Forms\SetUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SetUp.Designer.cs">
+    <Compile Include="Forms\SetUp.Designer.cs">
       <DependentUpon>SetUp.cs</DependentUpon>
     </Compile>
     <Compile Include="TimeForClockAndText.cs" />
     <Compile Include="VacationalDays.cs" />
-    <Compile Include="Vacations.cs">
+    <Compile Include="Forms\Vacations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vacations.Designer.cs">
+    <Compile Include="Forms\Vacations.Designer.cs">
       <DependentUpon>Vacations.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomClasses.resx">
+    <EmbeddedResource Include="Forms\CustomClasses.resx">
       <DependentUpon>CustomClasses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Help.resx">
+    <EmbeddedResource Include="Forms\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
+    <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Melody.resx">
+    <EmbeddedResource Include="Forms\Melody.resx">
       <DependentUpon>Melody.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MergeClassesForm.resx">
+    <EmbeddedResource Include="Forms\MergeClassesForm.resx">
       <DependentUpon>MergeClassesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer.resx">
+    <EmbeddedResource Include="Forms\Printer.resx">
       <DependentUpon>Printer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SchoolProgram.resx">
+    <EmbeddedResource Include="Forms\SchoolProgram.resx">
       <DependentUpon>SchoolProgram.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchClasses.resx">
+    <EmbeddedResource Include="Forms\SearchClasses.resx">
       <DependentUpon>SearchClasses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Templates.resx">
+    <EmbeddedResource Include="Forms\Templates.resx">
       <DependentUpon>Templates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -294,10 +294,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SetUp.resx">
+    <EmbeddedResource Include="Forms\SetUp.resx">
       <DependentUpon>SetUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vacations.resx">
+    <EmbeddedResource Include="Forms\Vacations.resx">
       <DependentUpon>Vacations.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
@@ -532,8 +532,6 @@
   <ItemGroup>
     <None Include="Resources\notes.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
