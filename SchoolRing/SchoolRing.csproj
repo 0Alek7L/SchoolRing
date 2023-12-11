@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B28213C-083F-4381-B27F-6339AF221891}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SchoolRing</RootNamespace>
+    <AssemblyName>SchoolRing</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\thisi\Downloads\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SchoolRing.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>62F712CE245ABF1CA3D384E4A2B86958612CD413</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SchoolRing_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=7.0.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.0.1\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=2.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.2.3.2\lib\net462\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Excel.14.0.4760.1000\lib\net20\Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller.cs" />
+    <Compile Include="CustomClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomClasses.Designer.cs">
+      <DependentUpon>CustomClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Holidays.cs" />
+    <Compile Include="Interfaces\IController.cs" />
+    <Compile Include="Interfaces\ISchoolClass.cs" />
+    <Compile Include="Interfaces\IVacationalDays.cs" />
+    <Compile Include="IO\SaveTheData.cs" />
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Melody.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Melody.Designer.cs">
+      <DependentUpon>Melody.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MelodyFiles.cs" />
+    <Compile Include="MergeClassesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MergeClassesForm.Designer.cs">
+      <DependentUpon>MergeClassesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printer.Designer.cs">
+      <DependentUpon>Printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\ISchoolClassRepository.cs" />
+    <Compile Include="Repository\IVacationalDaysRepository.cs" />
+    <Compile Include="Repository\IVDRepo.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\VacationalDaysRepository.cs" />
+    <Compile Include="SchoolClass.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchoolProgram.Designer.cs">
+      <DependentUpon>SchoolProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchClasses.Designer.cs">
+      <DependentUpon>SearchClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templates.Designer.cs">
+      <DependentUpon>Templates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetUp.Designer.cs">
+      <DependentUpon>SetUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeForClockAndText.cs" />
+    <Compile Include="VacationalDays.cs" />
+    <Compile Include="Vacations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacations.Designer.cs">
+      <DependentUpon>Vacations.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomClasses.resx">
+      <DependentUpon>CustomClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Melody.resx">
+      <DependentUpon>Melody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MergeClassesForm.resx">
+      <DependentUpon>MergeClassesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer.resx">
+      <DependentUpon>Printer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchoolProgram.resx">
+      <DependentUpon>SchoolProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchClasses.resx">
+      <DependentUpon>SearchClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates.resx">
+      <DependentUpon>Templates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SetUp.resx">
+      <DependentUpon>SetUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacations.resx">
+      <DependentUpon>Vacations.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SchoolRing_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geo milev logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-12-arrow-down %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-140-help-center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-12-arrow-down %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-12-arrow-down %281%291.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-161-trending-flat.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-161-trending-flat %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-161-trending-flat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flatArrowPNG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flatArrowGIF.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flatArrowPNGLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-23-calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-57-help-question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-57-help-question %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-18-autorenew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wired-outline-43-music-note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wired-outline-43-music-note.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wired-outline-43-music-note1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause-gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-31-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-42-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wired-outline-49-plus-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wired-outline-49-plus-circle %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removeNEW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenCheck_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenCheckSecondGif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gc2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-regular-23-calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-regular-50-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newSolidCheck.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\errorCross.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-solid-29-cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wired-outline-50-minus-circle.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
