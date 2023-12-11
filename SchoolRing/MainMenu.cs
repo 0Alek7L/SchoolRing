@@ -230,19 +230,31 @@ namespace SchoolRing
             //Merging classes label show and hide
             if (Program.WithClassSchedule)
             {
+                //printer
                 pictureBoxPrinter.Show();
                 labelPrinter.Show();
+                //search
                 pictureBoxSearchButton.Show();
                 labelSearch.Show();
+                //mergeClasses
                 labelMergeClasses.Show();
+                //customClasses
+                pictureBoxCustomClasses.Show();
+                labelCustomClasses.Show();
             }
             else
             {
+                //printer
                 pictureBoxPrinter.Hide();
                 labelPrinter.Hide();
+                //search
                 pictureBoxSearchButton.Hide();
                 labelSearch.Hide();
+                //mergeClasses
                 labelMergeClasses.Hide();
+                //customClasses
+                pictureBoxCustomClasses.Hide();
+                labelCustomClasses.Hide();
             }
         }
 

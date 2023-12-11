@@ -151,6 +151,7 @@ namespace SchoolRing
                     ShowCheck();
                 }
                 buttonSetFreeClass_Click(sender, e);
+                comboBox1ClassNumber.SelectedIndex = -1;
             }
             catch (FormatException)
             {
@@ -399,6 +400,9 @@ namespace SchoolRing
             else
             {
                 comboBox1ClassNumber.SelectedIndex = num - 1;
+                buttonSetFreeClass.ForeColor = Color.Black;
+                buttonSetFreeClass.Font = new Font(buttonSetFreeClass.Font, FontStyle.Bold);
+                isFree = true;
             }
         }
 
