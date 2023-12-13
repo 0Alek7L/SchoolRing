@@ -60,6 +60,10 @@ namespace SchoolRing
                 {
                     SaveTheData.ReadVacations();
                 }
+                if (File.Exists(SaveTheData.filePathNotes))
+                {
+                    SaveTheData.ReadNotes();
+                }
                 foreach (var item in GetModels())
                 {
                     if (item.IsMerging)
@@ -248,6 +252,7 @@ namespace SchoolRing
                 SaveTheData.SaveVacation();
                 SaveTheData.SaveTimes();
                 SaveTheData.SaveProperties();
+                SaveTheData.SaveNotes();
                 try
                 {
                     foreach (Form form in Application.OpenForms)   //ERROR

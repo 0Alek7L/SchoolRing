@@ -161,6 +161,10 @@ namespace SchoolRing
             {
                 MessageBox.Show("Грешка: " + ex.Message);
             }
+            finally
+            {
+                SaveTheData.SaveSchoolClasses();
+            }
         }
         System.Windows.Forms.Timer tempTimer = new System.Windows.Forms.Timer();
         private void ShowCheck()
@@ -508,7 +512,7 @@ namespace SchoolRing
             Program.WithClassSchedule = true;
             Program.LastForms.Push(this);
             //MainMenu mainMenu = new MainMenu();
-            this.Hide();
+            this.Close();
             //mainMenu.Show();
             MainMenu.Instance.Show();
             SaveTheData.SaveSchoolClasses();

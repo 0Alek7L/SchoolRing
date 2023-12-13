@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using SchoolRing.Interfaces;
+using SchoolRing.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -149,11 +150,11 @@ namespace SchoolRing.IO
             Program.LongBreakAfter = decryptedDataTimes[3];
         }
 
-        public static void ReadNotes()//TODO IMPLEMENT
+        public static void ReadNotes()
         {
             EncryptedDataHandler dataHandler = new EncryptedDataHandler();
 
-            List<INote> decryptedDataNotes = dataHandler.ReadAndDecryptDataNotes(filePathNotes);
+            List<Note> decryptedDataNotes = dataHandler.ReadAndDecryptDataNotes(filePathNotes);
             foreach (var item in decryptedDataNotes)
             {
                 Program.noteRepo.AddModel(item);
@@ -308,19 +309,19 @@ namespace SchoolRing.IO
             }
         }
         //classes
-        public List<INote> ReadAndDecryptDataNotes(string filePath)
+        public List<Note> ReadAndDecryptDataNotes(string filePath)
         {
             try
             {
                 string encryptedData = File.ReadAllText(filePath);
                 string decryptedData = DecryptData(encryptedData, encryptionKey);
-                List<INote> schoolClasses = JsonConvert.DeserializeObject<List<INote>>(decryptedData);
-                return schoolClasses ?? new List<INote>();
+                List<Note> schoolClasses = JsonConvert.DeserializeObject<List<Note>>(decryptedData);
+                return schoolClasses ?? new List<Note>();
             }
             catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show($"Грешка при четене и декриптиране на данните: {ex.Message}");
-                return new List<INote>();
+                return new List<Note>();
             }
         }
         private string EncryptData(string data, string key)

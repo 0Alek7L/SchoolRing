@@ -22,21 +22,18 @@ namespace SchoolRing.Repository
         public INote FirstModel(DateTime _date, int _classNum, bool _purva)
         {
             return _notes
-                .FirstOrDefault(n=>n.Date==_date&&n.ClassNum==_classNum&&n.Purva==_purva);
+                .First(n=>n.Date.ToShortDateString()==_date.ToShortDateString() 
+                && n.ClassNum==_classNum&&n.Purva==_purva);
         }
 
 
         public bool IsThereAModel(DateTime _date, int _classNum, bool _purva)
         {
             return _notes
-                .Any(n => n.Date == _date && n.ClassNum == _classNum && n.Purva == _purva);
+                .Any(n => n.Date.ToShortDateString() == _date.ToShortDateString()
+                && n.ClassNum == _classNum && n.Purva == _purva);
         }
 
-        public bool IsThereAModel(string _title)
-        {
-            return _notes
-                .Any(n => n.Title == _title);
-        }
 
         public void RemoveModel(INote model)
         {

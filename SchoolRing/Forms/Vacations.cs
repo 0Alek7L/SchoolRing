@@ -1,5 +1,6 @@
 ﻿using Microsoft.Office.Interop.Excel;
 using SchoolRing.Interfaces;
+using SchoolRing.IO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,6 +110,7 @@ namespace SchoolRing
                 RefreshTheListBox();
                 textBox1.Clear();
                 MessageBox.Show($"Вие добавихте ваканция на име {vacation.Argument}", "Операцията е извършена успешно");
+                SaveTheData.SaveVacation();
             }
             catch (ArgumentException ex)
             {
@@ -157,7 +159,7 @@ namespace SchoolRing
             pictureBoxRemove.Hide();
             RefreshTheListBox();
             textBox1.Text = "";
-
+            SaveTheData.SaveVacation();
         }
 
         private void dEFAULTToolStripMenuItem_Click(object sender, EventArgs e)

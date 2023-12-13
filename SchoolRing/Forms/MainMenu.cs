@@ -28,7 +28,7 @@ namespace SchoolRing
             InitializeComponent();
             //AskForMelody();
             Program.HaveBeenIntoMainMenu = true;
-            SaveTheData.SaveSchoolClasses();
+            //SaveTheData.SaveSchoolClasses();
             timer = new System.Windows.Forms.Timer();
             timerForMelody = new System.Windows.Forms.Timer();
             timer.Interval = 50;
@@ -76,6 +76,7 @@ namespace SchoolRing
 
             }
             Program.ShowTheCurrentIcon(pictureBox3);
+
         }
 
 
@@ -105,23 +106,6 @@ namespace SchoolRing
 
         public bool hasRangForStart = false;
         public bool hasRangForEnd = false;
-        private void AskForMelody()
-        {
-            if (!Program.HaveBeenIntoMainMenu)
-            {
-                DialogResult doYouWantToUseMelody = MessageBox.Show("Желаете ли да използвате мелодия за начало и край на часа?", "Въпрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (doYouWantToUseMelody == DialogResult.Yes)
-                {
-                    Program.allowRinging = true;
-                    checkBox1.Checked = true;
-                }
-                else
-                {
-                    Program.allowRinging = false;
-                    checkBox1.Checked = false;
-                }
-            }
-        }
         private void Timer_TickForMelody(object sender, EventArgs e)
         {
             if (Program.allowRinging)
@@ -257,6 +241,7 @@ namespace SchoolRing
                 pictureBoxCustomClasses.Hide();
                 labelCustomClasses.Hide();
             }
+
         }
 
         private void UpdateLabelsWithClassSchedule()

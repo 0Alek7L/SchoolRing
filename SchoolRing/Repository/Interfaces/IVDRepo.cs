@@ -14,5 +14,6 @@ namespace SchoolRing.Repository
         T GetModel(DateTime start, DateTime end);
         bool IsThereAModel(DateTime start, DateTime end);
         bool IsTodayVacation();
+        bool IsThisDayVacation(DateTime dateTime);
     }
 }

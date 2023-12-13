@@ -1,4 +1,5 @@
 ﻿using SchoolRing.Interfaces;
+using SchoolRing.IO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -104,6 +105,7 @@ namespace SchoolRing
                 }
                 Program.AddRecord(schoolClass);
                 comboBoxDay_SelectedIndexChanged(sender, e);
+                SaveTheData.SaveSchoolClasses();
             }
             catch (Exception ex)
             {

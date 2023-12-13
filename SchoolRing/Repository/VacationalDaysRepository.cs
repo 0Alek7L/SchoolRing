@@ -57,5 +57,15 @@ namespace SchoolRing.Repository
             else
                 return false;
         }
+
+        public bool IsThisDayVacation(DateTime dateTime)
+        {
+            if (_days.Any(x => x.StartDate <= dateTime.Date && x.EndDate >= dateTime.Date))
+                return true;
+            else if (_days.Any(x => x.StartDate.Date == dateTime.Date || x.EndDate.Date == dateTime.Date))
+                return true;
+            else
+                return false;
+        }
     }
 }

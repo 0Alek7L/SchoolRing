@@ -1,4 +1,5 @@
 ﻿using SchoolRing.Interfaces;
+using SchoolRing.IO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -207,6 +208,7 @@ namespace SchoolRing
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+            SaveTheData.SaveProperties();
             Program.LastForms.Pop().Show();
             this.Close();
         }
