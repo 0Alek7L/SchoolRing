@@ -32,10 +32,11 @@ namespace SchoolRing.Forms
             CheckTheDate(monthCalendar1.SelectionStart);
             FillTheListBox();
             selectedDate= DateTime.Today;
-            foreach (var item in Program.noteRepo.GetModels())
-            {
-                MessageBox.Show(item.Date.ToString() + " " + selectedDate.ToString());
-            }
+            //foreach (var item in Program.noteRepo.GetModels())
+            //{
+            //    MessageBox.Show(item.Date.ToString() + " " + selectedDate.ToString());
+            //}
+            MessageBox.Show("В момента запаметяването на записките не работи");
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -155,10 +156,10 @@ namespace SchoolRing.Forms
             {
                 pictureBoxDeleteNote.Hide();
             }
-            foreach (var item in Program.noteRepo.GetModels())
-            {
-                MessageBox.Show(item.Date.ToString() + " " + selectedDate.ToString());
-            }
+            //foreach (var item in Program.noteRepo.GetModels())
+            //{
+            //    MessageBox.Show(item.Date.ToString() + " " + selectedDate.ToString());
+            //}
         }
 
         private void pictureBoxCloseMenu_Click(object sender, EventArgs e)
