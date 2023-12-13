@@ -1,4 +1,5 @@
-﻿using SchoolRing.Interfaces;
+﻿using Newtonsoft.Json;
+using SchoolRing.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,18 @@ using System.Threading.Tasks;
 
 namespace SchoolRing.Models
 {
+    [Serializable]
     public class Note : INote
     {
+        [JsonProperty("text")]
         private string text;
+        [JsonProperty("date")]
         private DateTime date;
+        [JsonProperty("dateCreated")]
         private DateTime dateCreated;
+        [JsonProperty("classNum")]
         private int classNum;
+        [JsonProperty("purva")]
         private bool purva;
 
         public Note(string _text, DateTime _date, DateTime _dateCreated, int _classNum, bool _purva)

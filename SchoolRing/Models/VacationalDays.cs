@@ -1,4 +1,5 @@
 ﻿using NAudio.Wave.SampleProviders;
+using Newtonsoft.Json;
 using SchoolRing.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,14 @@ using System.Threading.Tasks;
 
 namespace SchoolRing
 {
+    [Serializable]
     internal class VacationalDays : IVacationalDays
     {
-		private DateTime startDate;
+        [JsonProperty("startDate")]
+        private DateTime startDate;
+        [JsonProperty("endDate")]
 		private DateTime endDate;
+        [JsonProperty("argument")]
 		private string argument;
 
         public VacationalDays(string argument, DateTime startDate, DateTime endDate)

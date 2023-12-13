@@ -53,9 +53,9 @@
             this.textBoxNote = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBoxCloseMenu = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.labelShowFirstDateAndTime = new System.Windows.Forms.Label();
             pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -66,7 +66,6 @@
             this.panelWrite.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSaveNote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeleteNote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloseMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
@@ -238,9 +237,9 @@
             this.buttonWriteNewNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(108)))), ((int)(((byte)(6)))));
             this.buttonWriteNewNote.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonWriteNewNote.Font = new System.Drawing.Font("Jura", 32F, System.Drawing.FontStyle.Bold);
-            this.buttonWriteNewNote.Location = new System.Drawing.Point(313, 434);
+            this.buttonWriteNewNote.Location = new System.Drawing.Point(262, 435);
             this.buttonWriteNewNote.Name = "buttonWriteNewNote";
-            this.buttonWriteNewNote.Size = new System.Drawing.Size(393, 64);
+            this.buttonWriteNewNote.Size = new System.Drawing.Size(495, 64);
             this.buttonWriteNewNote.TabIndex = 84;
             this.buttonWriteNewNote.Text = "->ПИСАНЕ<-";
             this.buttonWriteNewNote.UseVisualStyleBackColor = false;
@@ -267,7 +266,6 @@
             this.panelWrite.Controls.Add(this.textBoxNote);
             this.panelWrite.Controls.Add(this.textBox1);
             this.panelWrite.Controls.Add(this.label2);
-            this.panelWrite.Controls.Add(this.pictureBoxCloseMenu);
             this.panelWrite.Controls.Add(this.pictureBox8);
             this.panelWrite.Location = new System.Drawing.Point(0, 113);
             this.panelWrite.Name = "panelWrite";
@@ -315,7 +313,7 @@
             // 
             // textBoxNote
             // 
-            this.textBoxNote.Font = new System.Drawing.Font("Jura Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNote.Font = new System.Drawing.Font("Jura Medium", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNote.Location = new System.Drawing.Point(124, 96);
             this.textBoxNote.MaxLength = 1073741823;
             this.textBoxNote.Multiline = true;
@@ -347,19 +345,6 @@
             this.label2.TabIndex = 87;
             this.label2.Text = "РАЗМЕР НА ШРИФТ: ";
             // 
-            // pictureBoxCloseMenu
-            // 
-            this.pictureBoxCloseMenu.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxCloseMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxCloseMenu.Image = global::SchoolRing.Properties.Resources.system_solid_29_cross;
-            this.pictureBoxCloseMenu.Location = new System.Drawing.Point(950, 6);
-            this.pictureBoxCloseMenu.Name = "pictureBoxCloseMenu";
-            this.pictureBoxCloseMenu.Size = new System.Drawing.Size(65, 65);
-            this.pictureBoxCloseMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCloseMenu.TabIndex = 85;
-            this.pictureBoxCloseMenu.TabStop = false;
-            this.pictureBoxCloseMenu.Click += new System.EventHandler(this.pictureBoxCloseMenu_Click);
-            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::SchoolRing.Properties.Resources.Screenshot_56;
@@ -373,12 +358,24 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::SchoolRing.Properties.Resources.Screenshot_56;
-            this.pictureBox4.Location = new System.Drawing.Point(47, 185);
+            this.pictureBox4.Location = new System.Drawing.Point(47, 178);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(926, 335);
+            this.pictureBox4.Size = new System.Drawing.Size(926, 342);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 87;
             this.pictureBox4.TabStop = false;
+            // 
+            // labelShowFirstDateAndTime
+            // 
+            this.labelShowFirstDateAndTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
+            this.labelShowFirstDateAndTime.Font = new System.Drawing.Font("Jura", 18F, System.Drawing.FontStyle.Bold);
+            this.labelShowFirstDateAndTime.ForeColor = System.Drawing.Color.White;
+            this.labelShowFirstDateAndTime.Location = new System.Drawing.Point(506, 185);
+            this.labelShowFirstDateAndTime.Name = "labelShowFirstDateAndTime";
+            this.labelShowFirstDateAndTime.Size = new System.Drawing.Size(424, 41);
+            this.labelShowFirstDateAndTime.TabIndex = 90;
+            this.labelShowFirstDateAndTime.Text = "ИМЕ";
+            this.labelShowFirstDateAndTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Notes
             // 
@@ -398,6 +395,7 @@
             this.Controls.Add(this.listBoxClasses);
             this.Controls.Add(this.labelClass);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelShowFirstDateAndTime);
             this.Controls.Add(this.pictureBox4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Notes";
@@ -413,7 +411,6 @@
             this.panelWrite.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSaveNote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeleteNote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloseMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
@@ -439,7 +436,6 @@
         private System.Windows.Forms.Button buttonWriteNewNote;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Panel panelWrite;
-        private System.Windows.Forms.PictureBox pictureBoxCloseMenu;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
@@ -448,5 +444,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBoxSaveNote;
         private System.Windows.Forms.PictureBox pictureBoxDeleteNote;
+        private System.Windows.Forms.Label labelShowFirstDateAndTime;
     }
 }

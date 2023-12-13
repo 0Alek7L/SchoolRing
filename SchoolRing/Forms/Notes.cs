@@ -31,12 +31,7 @@ namespace SchoolRing.Forms
             Program.ShowTheCurrentIcon(pictureBox3);
             CheckTheDate(monthCalendar1.SelectionStart);
             FillTheListBox();
-            selectedDate= DateTime.Today;
-            //foreach (var item in Program.noteRepo.GetModels())
-            //{
-            //    MessageBox.Show(item.Date.ToString() + " " + selectedDate.ToString());
-            //}
-            MessageBox.Show("В момента запаметяването на записките не работи");
+            selectedDate = DateTime.Today;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -89,7 +84,6 @@ namespace SchoolRing.Forms
                 case DayOfWeek.Friday: selectedDayOfWeek = "ПЕТЪК"; break;
             }
             classes = Program.GetModels()
-                //.Where(sc => sc.IsPurvaSmqna || !sc.IsPurvaSmqna)
                 .Where(sc => sc.Day == selectedDayOfWeek)
                 .OrderBy(sc => !sc.IsPurvaSmqna)
                 .ThenBy(sc => sc.Num)
@@ -129,6 +123,17 @@ namespace SchoolRing.Forms
                     buttonWriteNewNote.Show();
                 }
                 selectedClass = classes[listBoxClasses.SelectedIndex];
+                if (Program.noteRepo.IsThereAModel(selectedDate, selectedClass.Num, selectedClass.IsPurvaSmqna))
+                {
+                    buttonWriteNewNote.Text = "->РЕДАКТИРАНЕ<-";
+                }
+                else
+                {
+                    buttonWriteNewNote.Text = "->ПИСАНЕ<-";
+                }
+                labelClassName.Text = $"{selectedDayOfWeek} {selectedDate.ToString("dd/MM/yyyy")} {selectedClass.ShowTheRecord()}";
+                labelShowFirstDateAndTime.Text = $"{selectedDayOfWeek} {selectedDate.ToString("dd/MM/yyyy")}";
+
             }
         }
 
@@ -145,27 +150,12 @@ namespace SchoolRing.Forms
         private void buttonWriteNewNote_Click(object sender, EventArgs e)
         {
             panelWrite.Show();
-            labelClassName.Text = $"{selectedDayOfWeek} {selectedDate.ToShortDateString()} {selectedClass.ShowTheRecord()}";
+            //labelClassName.Text = $"{selectedDayOfWeek} {selectedDate.ToShortDateString()} {selectedClass.ShowTheRecord()}";
             if (Program.noteRepo.IsThereAModel(selectedDate, selectedClass.Num, selectedClass.IsPurvaSmqna))
             {
-                pictureBoxDeleteNote.Show();
                 textBoxNote.Text = Program.noteRepo
                     .FirstModel(selectedDate, selectedClass.Num, selectedClass.IsPurvaSmqna).Text;
             }
-            else
-            {
-                pictureBoxDeleteNote.Hide();
-            }
-            //foreach (var item in Program.noteRepo.GetModels())
-            //{
-            //    MessageBox.Show(item.Date.ToString() + " " + selectedDate.ToString());
-            //}
-        }
-
-        private void pictureBoxCloseMenu_Click(object sender, EventArgs e)
-        {
-            panelWrite.Hide();
-            textBoxNote.Text = "";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -187,34 +177,63 @@ namespace SchoolRing.Forms
 
         private void pictureBoxDeleteNote_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox
-                .Show("Сигурни ли сте, че искате да изтриете записките за този час?", "Предупреждение", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
+            if (!Program.noteRepo.IsThereAModel(selectedDate, selectedClass.Num, selectedClass.IsPurvaSmqna))
             {
-                panelWrite.Hide();
-
+                INote note = new Note(textBoxNote.Text, selectedDate, DateTime.Now, selectedClass.Num, selectedClass.IsPurvaSmqna);
+                Program.noteRepo.AddModel(note);
                 Program.noteRepo.RemoveModel(Program.noteRepo
                     .FirstModel(selectedDate, selectedClass.Num, selectedClass.IsPurvaSmqna));
-
-                MessageBox.Show("Успешно премахнахте записките за този час!");
-                textBoxNote.Text = "";
+            }
+            else
+            {
+                DialogResult dialog = MessageBox
+                    .Show("Сигурни ли сте, че искате да изтриете записките за този час?", "Предупреждение", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    Program.noteRepo.RemoveModel(Program.noteRepo
+                        .FirstModel(selectedDate, selectedClass.Num, selectedClass.IsPurvaSmqna));
+                    MessageBox.Show("Успешно премахнахте записките за този час!");
+                }
+            }
+            panelWrite.Hide();
+            textBoxNote.Text = "";
+            if (listBoxClasses.Items.Count > 0)
+            {
+                listBoxClasses.ClearSelected();
+                listBoxClasses.SelectedIndex = 0;
             }
         }
 
         private void pictureBoxSaveNote_Click(object sender, EventArgs e)
         {
-            INote note = new Note(textBoxNote.Text, selectedDate, DateTime.Now, selectedClass.Num, selectedClass.IsPurvaSmqna);
-            if (!Program.noteRepo.IsThereAModel(selectedDate, selectedClass.Num, selectedClass.IsPurvaSmqna))
+            try
             {
-                Program.noteRepo.AddModel(note);
+                if (textBoxNote.Text.Length < 5)
+                {
+                    throw new ArgumentException("Дължината на записките за един час трябва да е поне 5 символа!");
+                }
+                INote note = new Note(textBoxNote.Text, selectedDate, DateTime.Now, selectedClass.Num, selectedClass.IsPurvaSmqna);
+                if (!Program.noteRepo.IsThereAModel(selectedDate, selectedClass.Num, selectedClass.IsPurvaSmqna))
+                {
+                    Program.noteRepo.AddModel(note);
+                }
+                else
+                {
+                    Program.noteRepo.UpdateModel(note);
+                }
+                MessageBox.Show("Записът е успешен!");
+                textBoxNote.Text = "";
+                panelWrite.Hide();
+                if (listBoxClasses.Items.Count > 0)
+                {
+                    listBoxClasses.ClearSelected();
+                    listBoxClasses.SelectedIndex = 0;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Program.noteRepo.UpdateModel(note);
+                MessageBox.Show("Грешка: " + ex.Message);
             }
-            MessageBox.Show("Записът е успешен!");
-            textBoxNote.Text = "";
-            panelWrite.Hide();
         }
     }
 }
