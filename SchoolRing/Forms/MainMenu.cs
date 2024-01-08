@@ -2,6 +2,7 @@
 using SchoolRing.Forms;
 using SchoolRing.Interfaces;
 using SchoolRing.IO;
+using SchoolRing.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace SchoolRing
     {
         private static MainMenu instance;
         System.Windows.Forms.Timer timer;
+        System.Windows.Forms.Timer timerForNotes;
         System.Windows.Forms.Timer timerForMelody;
         List<ISchoolClass> classesLeftAsObjects;
         public MainMenu()
@@ -30,16 +32,19 @@ namespace SchoolRing
             Program.HaveBeenIntoMainMenu = true;
             //SaveTheData.SaveSchoolClasses();
             timer = new System.Windows.Forms.Timer();
+            timerForNotes = new System.Windows.Forms.Timer();
             timerForMelody = new System.Windows.Forms.Timer();
             timer.Interval = 50;
             timerForMelody.Interval = 200;//501
+            timerForNotes.Interval = 500;//501
             timer.Tick += Timer_Tick;
             timer.Tick += Timer_TickForMovingLabel;
+            timerForNotes.Tick += Timer_TickForNotes;
             //timer.Tick += Timer_TickForSpecialTasks;
             timerForMelody.Tick += Timer_TickForMelody;
             timer.Start();
+            timerForNotes.Start();
             timerForMelody.Start();
-            Program.LastForms.Clear();
             currentClass = null;
             nextClass = null;
             labelShowNextClass.Text = "-";
@@ -76,9 +81,8 @@ namespace SchoolRing
 
             }
             Program.ShowTheCurrentIcon(pictureBox3);
-
+            labelForVacation.Click += LabelForVacation_Click;
         }
-
 
         public static MainMenu Instance
         {
@@ -196,6 +200,9 @@ namespace SchoolRing
                 if (Program.vdRepo.IsTodayVacation())
                 {
                     DateTime dateTime = DateTime.Now;
+                    labelForVacation.Text = "ДНЕС Е НЕУЧЕБЕН ДЕН";
+                    labelForVacation.BackColor = Color.Red;
+                    labelForVacation.Cursor = Cursors.No;
                     labelForVacation.Show();
                     labelForHolidays.Text = $"{Program.vdRepo.GetModels().First(x => x.StartDate.Date <= dateTime.Date && x.EndDate.Date >= dateTime.Date).Argument}";
                     labelShowClassesLeft.Text = "-";
@@ -226,6 +233,9 @@ namespace SchoolRing
                 //customClasses
                 pictureBoxCustomClasses.Show();
                 labelCustomClasses.Show();
+                //notes
+                pictureBoxNotes.Show();
+                labelNotes.Show();
             }
             else
             {
@@ -240,8 +250,60 @@ namespace SchoolRing
                 //customClasses
                 pictureBoxCustomClasses.Hide();
                 labelCustomClasses.Hide();
+                //notes
+                pictureBoxNotes.Hide();
+                labelNotes.Hide();
             }
 
+        }
+        //TODO
+        private void Timer_TickForNotes(object sender, EventArgs e)
+        {
+            if (!Program.vdRepo.IsTodayVacation() && Program.noteRepo.GetModels()
+                .Any(n => n.Date.ToShortDateString() == DateTime.Now.ToShortDateString())&&currentClass!=null)
+            {
+                if (!currentClass.IsMerging)
+                {
+                    currentClassNote = Program.noteRepo.FirstModel(DateTime.Now, currentClass.Num, currentClass.IsPurvaSmqna);
+                }
+                else
+                {
+                    if (new TimeSpan(currentClass.StartHours, currentClass.StartMinutes, 0)
+                        .Add(TimeSpan.FromMinutes(Program.ClassLength)) < new TimeSpan(DateTime.Now.Hour,
+                        DateTime.Now.Minute, DateTime.Now.Second))//if the second hour has started
+                    {
+                        if (currentClass.IsPurvaSmqna && currentClass.Num == 7)
+                        {
+                            currentClassNote = Program.noteRepo.FirstModel(DateTime.Now, 1, false);
+                        }
+                        else
+                        {
+                            currentClassNote = Program.noteRepo.FirstModel(DateTime.Now,
+                                currentClass.Num + 1, currentClass.IsPurvaSmqna);
+                        }
+                    }
+                    else
+                    {
+                        currentClassNote = Program.noteRepo.FirstModel(DateTime.Now, currentClass.Num, currentClass.IsPurvaSmqna);
+                    }
+
+                }
+                if (currentClassNote != null)
+                {
+                    labelForVacation.Text = "НАТИСНИ ТУК!";
+                    labelForVacation.BackColor = Color.FromArgb(189, 191, 9);
+                    labelForVacation.Cursor = Cursors.Hand;
+                    labelForVacation.Show();
+                }
+            }
+        }
+        INote currentClassNote = null;
+        private void LabelForVacation_Click(object sender, EventArgs e)
+        {
+            if (!Program.vdRepo.IsTodayVacation())
+            {
+                MessageBox.Show($"{currentClassNote.Text}", "Записки за този час");
+            }
         }
 
         private void UpdateLabelsWithClassSchedule()
@@ -430,8 +492,6 @@ namespace SchoolRing
                             labelShowTimeLeft.Text = $"{diff.Hours:D2}:{diff.Minutes:D2}:{diff.Seconds:D2}";
                         }
                     }
-
-
                 }
                 else
                 {
@@ -440,7 +500,6 @@ namespace SchoolRing
                     labelShowNextClass.Text = "-";
                     labelShowTimeLeft.Text = "00:00:00";
                 }
-
 
                 if (currentClass != null)
                     labelShowCurrentClass.Text = currentClass.GetClassGradeAndParalelka();
@@ -461,7 +520,6 @@ namespace SchoolRing
                 labelShowNextClass.Text = "-";
                 labelShowTimeLeft.Text = "00:00:00";
             }
-
         }
 
         private void UpdateLabelsWithoutClassSchedule()
@@ -803,7 +861,13 @@ namespace SchoolRing
 
         public void pictureBoxRefresh_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            this.Hide();
+            MainMenu.Instance.Refresh();
+            while (Program.LastForms.Count > 0)
+            {
+                Program.LastForms.Pop().Dispose();
+            }
+            this.Show();
         }
 
         private void labelMergeClasses_Click(object sender, EventArgs e)

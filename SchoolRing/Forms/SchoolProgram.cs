@@ -74,7 +74,7 @@ namespace SchoolRing
         private void comboBoxClassGrade_Click(object sender, EventArgs e)
         {
             if (comboBox1ClassNumber.Text == "")
-                MessageBox.Show("Моля, изберете час!");
+                MessageBox.Show("Моля, изберете час чрез падащото меню или чрез кликване върху ред от списък с часове за ден от седмицата по-долу!");
         }
 
         private void listBoxMonday_Click(object sender, EventArgs e) => UpdateLabelDayAndSetVariable(1);

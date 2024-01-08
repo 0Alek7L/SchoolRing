@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -55,6 +56,11 @@ namespace SchoolRing
                 todayIsHoliday = true;
                 label.Text = SixthOfSeptember;
             }
+            else if (date.Month == 9 && date.Day == 15)
+            {
+                todayIsHoliday = true;
+                label.Text = FifteenthOfSeptember;
+            }
             else if (date.Month == 9 && date.Day == 22)
             {
                 todayIsHoliday = true;
@@ -83,6 +89,7 @@ namespace SchoolRing
         private static string SixthOfMay = "Честит празник! Днес е Гергьовден, ден на храбростта и празник на Българската армия!";  //06.05
         private static string TwentyFourthOfMay = "Честит ден на светите братя Кирил и Методий, на българската азбука, просвета и култура и на славянската книжовност!";  //24.05
         private static string SixthOfSeptember = "Честит празник! Днес е ден на съединението на Източна Румелия с Княжество България!";  //06.09
+        private static string FifteenthOfSeptember = "Честит първи учебен ден!";
         private static string TwentySecondOfSeptember = "Честит празник! Днес е ден на независимостта!"; //22.09
         private static string FirstOfNovember = "Честит празник! Днес е ден на народните будители!"; //01.11
         private static string MerryChristmas = "Честито Рождество Христово!";//25th and 26th of december

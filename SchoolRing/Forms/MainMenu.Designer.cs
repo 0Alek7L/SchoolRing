@@ -612,13 +612,13 @@
             // labelForVacation
             // 
             this.labelForVacation.BackColor = System.Drawing.Color.Red;
-            this.labelForVacation.Cursor = System.Windows.Forms.Cursors.No;
+            this.labelForVacation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelForVacation.Font = new System.Drawing.Font("Jura", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelForVacation.ForeColor = System.Drawing.Color.White;
-            this.labelForVacation.Location = new System.Drawing.Point(229, 487);
+            this.labelForVacation.Location = new System.Drawing.Point(95, 487);
             this.labelForVacation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelForVacation.Name = "labelForVacation";
-            this.labelForVacation.Size = new System.Drawing.Size(590, 58);
+            this.labelForVacation.Size = new System.Drawing.Size(832, 58);
             this.labelForVacation.TabIndex = 77;
             this.labelForVacation.Text = "ДНЕС Е НЕУЧЕБЕН ДЕН";
             this.labelForVacation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -723,9 +723,9 @@
             this.pictureBoxNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxNotes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxNotes.Image = global::SchoolRing.Properties.Resources.notes;
-            this.pictureBoxNotes.Location = new System.Drawing.Point(719, 156);
+            this.pictureBoxNotes.Location = new System.Drawing.Point(734, 163);
             this.pictureBoxNotes.Name = "pictureBoxNotes";
-            this.pictureBoxNotes.Size = new System.Drawing.Size(82, 69);
+            this.pictureBoxNotes.Size = new System.Drawing.Size(54, 56);
             this.pictureBoxNotes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxNotes.TabIndex = 84;
             this.pictureBoxNotes.TabStop = false;

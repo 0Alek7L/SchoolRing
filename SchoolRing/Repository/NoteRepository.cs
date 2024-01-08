@@ -22,7 +22,7 @@ namespace SchoolRing.Repository
         public INote FirstModel(DateTime _date, int _classNum, bool _purva)
         {
             return _notes
-                .First(n=>n.Date.ToShortDateString()==_date.ToShortDateString() 
+                .FirstOrDefault(n=>n.Date.ToShortDateString()==_date.ToShortDateString() 
                 && n.ClassNum==_classNum&&n.Purva==_purva);
         }
 
@@ -33,7 +33,6 @@ namespace SchoolRing.Repository
                 .Any(n => n.Date.ToShortDateString() == _date.ToShortDateString()
                 && n.ClassNum == _classNum && n.Purva == _purva);
         }
-
 
         public void RemoveModel(INote model)
         {

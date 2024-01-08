@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NAudio.CoreAudioApi;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,13 @@ namespace SchoolRing
     public class TimeForClockAndText
     {
         static DateTime date;
+        public const string dayOfWeekMonday = "ПОНЕДЕЛНИК";
+        public const string dayOfWeekTuesday = "ВТОРНИК";
+        public const string dayOfWeekWednesday = "СРЯДА";
+        public const string dayOfWeekThursday = "ЧЕТВЪРТЪК";
+        public const string dayOfWeekFriday = "ПЕТЪК";
+        public const string dayOfWeekSaturday = "СЪБОТА";
+        public const string dayOfWeekSunday = "НЕДЕЛЯ";
         public TimeForClockAndText()
         {
             date = DateTime.Now;
@@ -30,13 +38,13 @@ namespace SchoolRing
         {
             switch(date.DayOfWeek.ToString())
             {
-                case "Monday": return $"ПОНЕДЕЛНИК {date.Day:D2}.{date.Month:D2}";
-                case "Tuesday": return $"ВТОРНИК { date.Day:D2}.{ date.Month:D2}";
-                case "Wednesday": return $"СРЯДА {date.Day:D2}.{date.Month:D2}";
-                case "Thursday": return $"ЧЕТВЪРТЪК {date.Day:D2}.{date.Month:D2}";
-                case "Friday": return $"ПЕТЪК {date.Day:D2}.{date.Month:D2}";
-                case "Saturday": return $"СЪБОТА {date.Day:D2}.{date.Month:D2}";
-                case "Sunday": return $"НЕДЕЛЯ {date.Day:D2}.{date.Month:D2}";
+                case "Monday": return $"{TimeForClockAndText.dayOfWeekMonday} {date.Day:D2}.{date.Month:D2}";
+                case "Tuesday": return $"{TimeForClockAndText.dayOfWeekTuesday} { date.Day:D2}.{ date.Month:D2}";
+                case "Wednesday": return $"{TimeForClockAndText.dayOfWeekWednesday} {date.Day:D2}.{date.Month:D2}";
+                case "Thursday": return $"{TimeForClockAndText.dayOfWeekThursday} {date.Day:D2}.{date.Month:D2}";
+                case "Friday": return $"{TimeForClockAndText.dayOfWeekFriday} {date.Day:D2}.{date.Month:D2}";
+                case "Saturday": return $"{TimeForClockAndText.dayOfWeekSaturday} {date.Day:D2}.{date.Month:D2}";
+                case "Sunday": return $"{TimeForClockAndText.dayOfWeekSunday} {date.Day:D2}.{date.Month:D2}";
                 default: return null;
             }
         }
@@ -45,13 +53,13 @@ namespace SchoolRing
         {
             switch (date.DayOfWeek.ToString())
             {
-                case "Monday": return $"ПОНЕДЕЛНИК";
-                case "Tuesday": return $"ВТОРНИК";
-                case "Wednesday": return $"СРЯДА";
-                case "Thursday": return $"ЧЕТВЪРТЪК";
-                case "Friday": return $"ПЕТЪК";
-                case "Saturday": return $"СЪБОТА";
-                case "Sunday": return $"НЕДЕЛЯ";
+                case "Monday": return $"{TimeForClockAndText.dayOfWeekMonday}";
+                case "Tuesday": return $"{TimeForClockAndText.dayOfWeekTuesday}";
+                case "Wednesday": return $"{TimeForClockAndText.dayOfWeekWednesday}";
+                case "Thursday": return $"{TimeForClockAndText.dayOfWeekThursday}";
+                case "Friday": return $"{TimeForClockAndText.dayOfWeekFriday}";
+                case "Saturday": return $"{TimeForClockAndText.dayOfWeekSaturday}";
+                case "Sunday": return $"{TimeForClockAndText.dayOfWeekSunday}";
                 default: return null;
             }
         }

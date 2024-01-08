@@ -36,7 +36,7 @@ namespace SchoolRing
                 }
 
                 Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false); // Call this before any forms or controls are created
+                Application.SetCompatibleTextRenderingDefault(false);
                 time = new TimeForClockAndText();
 
                 controller = new Controller();
@@ -92,7 +92,7 @@ namespace SchoolRing
                 if (!HaveBeenIntoMainMenu)
                 {
                     Application.Run(new Templates());
-                    allowRinging=true;
+                    allowRinging = false;
                 }
                 else
                     Application.Run(new MainMenu());
@@ -101,7 +101,8 @@ namespace SchoolRing
             }
             else
             {
-                MessageBox.Show("Този софтуер вече е отворен! Моля, преди да го отворите на ново го затворете!");
+                MessageBox.Show("Нещо се обърка! Работата на приложението бе прекратена. Моля, отворете го наново!");
+                //RestartAsAdministrator();
             }
         }
         private static bool IsRunAsAdministrator()
@@ -176,7 +177,7 @@ namespace SchoolRing
 
         public static void ShowTheCurrentIcon(PictureBox picture)
         {
-            if(customIconPath==null)
+            if (customIconPath == null)
             {
                 ChangeCustomIcon(picture, false);
             }
@@ -316,11 +317,11 @@ namespace SchoolRing
             for (int i = 1; i <= 5; i++)
             {
                 string day = string.Empty;
-                if (i == 1) day = "ПОНЕДЕЛНИК";
-                if (i == 2) day = "ВТОРНИК";
-                if (i == 3) day = "СРЯДА";
-                if (i == 4) day = "ЧЕТВЪРТЪК";
-                if (i == 5) day = "ПЕТЪК";
+                if (i == 1) day = $"{TimeForClockAndText.dayOfWeekMonday}";
+                if (i == 2) day = $"{TimeForClockAndText.dayOfWeekTuesday}";
+                if (i == 3) day = $"{TimeForClockAndText.dayOfWeekWednesday}";
+                if (i == 4) day = $"{TimeForClockAndText.dayOfWeekThursday}";
+                if (i == 5) day = $"{TimeForClockAndText.dayOfWeekFriday}";
                 for (int j = 1; j <= 7; j++)
                 {
                     List<int> list = time.CalculateClassDuration(j, true);

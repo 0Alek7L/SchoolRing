@@ -56,6 +56,15 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.labelShowFirstDateAndTime = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.panelSearch = new System.Windows.Forms.Panel();
+            this.pictureBoxEditSearchNote = new System.Windows.Forms.PictureBox();
+            this.listBoxShowSearch = new System.Windows.Forms.ListBox();
+            this.textBoxSearchInput = new System.Windows.Forms.TextBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -68,6 +77,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeleteNote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panelSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditSearchNote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox5
@@ -236,10 +250,11 @@
             // 
             this.buttonWriteNewNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(108)))), ((int)(((byte)(6)))));
             this.buttonWriteNewNote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonWriteNewNote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonWriteNewNote.Font = new System.Drawing.Font("Jura", 32F, System.Drawing.FontStyle.Bold);
-            this.buttonWriteNewNote.Location = new System.Drawing.Point(262, 435);
+            this.buttonWriteNewNote.Location = new System.Drawing.Point(515, 427);
             this.buttonWriteNewNote.Name = "buttonWriteNewNote";
-            this.buttonWriteNewNote.Size = new System.Drawing.Size(495, 64);
+            this.buttonWriteNewNote.Size = new System.Drawing.Size(424, 64);
             this.buttonWriteNewNote.TabIndex = 84;
             this.buttonWriteNewNote.Text = "->ПИСАНЕ<-";
             this.buttonWriteNewNote.UseVisualStyleBackColor = false;
@@ -377,11 +392,128 @@
             this.labelShowFirstDateAndTime.Text = "ИМЕ";
             this.labelShowFirstDateAndTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(191)))), ((int)(((byte)(9)))));
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSearch.Font = new System.Drawing.Font("Jura", 32F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.Location = new System.Drawing.Point(85, 427);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(424, 64);
+            this.buttonSearch.TabIndex = 91;
+            this.buttonSearch.Text = "->ТЪРСЕНЕ<-";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonSearch.MouseEnter += new System.EventHandler(this.buttonSearch_MouseEnter);
+            this.buttonSearch.MouseLeave += new System.EventHandler(this.buttonSearch_MouseLeave);
+            // 
+            // panelSearch
+            // 
+            this.panelSearch.Controls.Add(this.pictureBoxEditSearchNote);
+            this.panelSearch.Controls.Add(this.listBoxShowSearch);
+            this.panelSearch.Controls.Add(this.textBoxSearchInput);
+            this.panelSearch.Controls.Add(this.pictureBox7);
+            this.panelSearch.Controls.Add(this.pictureBox9);
+            this.panelSearch.Controls.Add(this.pictureBox11);
+            this.panelSearch.Controls.Add(this.label4);
+            this.panelSearch.Location = new System.Drawing.Point(0, 117);
+            this.panelSearch.Name = "panelSearch";
+            this.panelSearch.Size = new System.Drawing.Size(1027, 433);
+            this.panelSearch.TabIndex = 92;
+            this.panelSearch.Visible = false;
+            // 
+            // pictureBoxEditSearchNote
+            // 
+            this.pictureBoxEditSearchNote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxEditSearchNote.Image = global::SchoolRing.Properties.Resources.edit__1_;
+            this.pictureBoxEditSearchNote.Location = new System.Drawing.Point(912, 198);
+            this.pictureBoxEditSearchNote.Name = "pictureBoxEditSearchNote";
+            this.pictureBoxEditSearchNote.Size = new System.Drawing.Size(107, 109);
+            this.pictureBoxEditSearchNote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEditSearchNote.TabIndex = 91;
+            this.pictureBoxEditSearchNote.TabStop = false;
+            this.pictureBoxEditSearchNote.Visible = false;
+            this.pictureBoxEditSearchNote.Click += new System.EventHandler(this.pictureBoxEditSearchNote_Click);
+            // 
+            // listBoxShowSearch
+            // 
+            this.listBoxShowSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.listBoxShowSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxShowSearch.Font = new System.Drawing.Font("Jura SemiBold", 20F);
+            this.listBoxShowSearch.ForeColor = System.Drawing.Color.White;
+            this.listBoxShowSearch.FormattingEnabled = true;
+            this.listBoxShowSearch.HorizontalScrollbar = true;
+            this.listBoxShowSearch.IntegralHeight = false;
+            this.listBoxShowSearch.ItemHeight = 36;
+            this.listBoxShowSearch.Location = new System.Drawing.Point(129, 130);
+            this.listBoxShowSearch.Name = "listBoxShowSearch";
+            this.listBoxShowSearch.Size = new System.Drawing.Size(764, 271);
+            this.listBoxShowSearch.TabIndex = 90;
+            this.listBoxShowSearch.SelectedIndexChanged += new System.EventHandler(this.listBoxShowSearch_SelectedIndexChanged);
+            // 
+            // textBoxSearchInput
+            // 
+            this.textBoxSearchInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
+            this.textBoxSearchInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearchInput.Font = new System.Drawing.Font("Jura SemiBold", 25F);
+            this.textBoxSearchInput.Location = new System.Drawing.Point(151, 27);
+            this.textBoxSearchInput.MaxLength = 100;
+            this.textBoxSearchInput.Name = "textBoxSearchInput";
+            this.textBoxSearchInput.Size = new System.Drawing.Size(634, 40);
+            this.textBoxSearchInput.TabIndex = 89;
+            this.textBoxSearchInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxSearchInput.TextChanged += new System.EventHandler(this.textBoxSearchInput_TextChanged);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::SchoolRing.Properties.Resources.Screenshot_49;
+            this.pictureBox7.Location = new System.Drawing.Point(106, 111);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(805, 307);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 88;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::SchoolRing.Properties.Resources.Screenshot_48;
+            this.pictureBox9.Location = new System.Drawing.Point(116, 11);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(791, 75);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 86;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox11.Image = global::SchoolRing.Properties.Resources.system_solid_29_cross;
+            this.pictureBox11.Location = new System.Drawing.Point(958, 3);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(66, 63);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 85;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Jura Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(117, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(791, 38);
+            this.label4.TabIndex = 87;
+            this.label4.Text = "Въведи поредица от символи, които се съдържат в запаметени записки.\r\n";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Notes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 631);
+            this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelWrite);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.buttonWriteNewNote);
@@ -396,6 +528,7 @@
             this.Controls.Add(this.labelClass);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelShowFirstDateAndTime);
+            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.pictureBox4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Notes";
@@ -413,6 +546,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeleteNote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panelSearch.ResumeLayout(false);
+            this.panelSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditSearchNote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,5 +584,14 @@
         private System.Windows.Forms.PictureBox pictureBoxSaveNote;
         private System.Windows.Forms.PictureBox pictureBoxDeleteNote;
         private System.Windows.Forms.Label labelShowFirstDateAndTime;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Panel panelSearch;
+        private System.Windows.Forms.ListBox listBoxShowSearch;
+        private System.Windows.Forms.TextBox textBoxSearchInput;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBoxEditSearchNote;
     }
 }
