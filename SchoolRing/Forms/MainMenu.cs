@@ -28,6 +28,8 @@ namespace SchoolRing
         public MainMenu()
         {
             InitializeComponent();
+            //Hide the problematic refreshBox
+            pictureBoxRefresh.Hide();
             //AskForMelody();
             Program.HaveBeenIntoMainMenu = true;
             //SaveTheData.SaveSchoolClasses();
@@ -36,7 +38,7 @@ namespace SchoolRing
             timerForMelody = new System.Windows.Forms.Timer();
             timer.Interval = 50;
             timerForMelody.Interval = 200;//501
-            timerForNotes.Interval = 500;//501
+            timerForNotes.Interval = 500;
             timer.Tick += Timer_Tick;
             timer.Tick += Timer_TickForMovingLabel;
             timerForNotes.Tick += Timer_TickForNotes;
@@ -215,7 +217,8 @@ namespace SchoolRing
             }
             else
             {
-                labelForVacation.Hide();
+                if (currentClassNote == null)
+                    labelForVacation.Hide();
                 pictureBoxForHolidays.Hide();
                 labelForHolidays.Hide();
             }
@@ -256,15 +259,15 @@ namespace SchoolRing
             }
 
         }
-        //TODO
         private void Timer_TickForNotes(object sender, EventArgs e)
         {
             if (!Program.vdRepo.IsTodayVacation() && Program.noteRepo.GetModels()
-                .Any(n => n.Date.ToShortDateString() == DateTime.Now.ToShortDateString())&&currentClass!=null)
+                .Any(n => n.Date.ToShortDateString() == DateTime.Now.ToShortDateString()) && currentClass != null)
             {
+                INote tempNote = null;
                 if (!currentClass.IsMerging)
                 {
-                    currentClassNote = Program.noteRepo.FirstModel(DateTime.Now, currentClass.Num, currentClass.IsPurvaSmqna);
+                    tempNote = Program.noteRepo.FirstModel(DateTime.Now, currentClass.Num, currentClass.IsPurvaSmqna);
                 }
                 else
                 {
@@ -274,27 +277,28 @@ namespace SchoolRing
                     {
                         if (currentClass.IsPurvaSmqna && currentClass.Num == 7)
                         {
-                            currentClassNote = Program.noteRepo.FirstModel(DateTime.Now, 1, false);
+                            tempNote = Program.noteRepo.FirstModel(DateTime.Now, 1, false);
                         }
                         else
                         {
-                            currentClassNote = Program.noteRepo.FirstModel(DateTime.Now,
+                            tempNote = Program.noteRepo.FirstModel(DateTime.Now,
                                 currentClass.Num + 1, currentClass.IsPurvaSmqna);
                         }
                     }
                     else
                     {
-                        currentClassNote = Program.noteRepo.FirstModel(DateTime.Now, currentClass.Num, currentClass.IsPurvaSmqna);
+                        tempNote = Program.noteRepo.FirstModel(DateTime.Now, currentClass.Num, currentClass.IsPurvaSmqna);
                     }
 
                 }
-                if (currentClassNote != null)
+                if (currentClassNote!=tempNote)
                 {
                     labelForVacation.Text = "НАТИСНИ ТУК!";
                     labelForVacation.BackColor = Color.FromArgb(189, 191, 9);
                     labelForVacation.Cursor = Cursors.Hand;
                     labelForVacation.Show();
                 }
+                currentClassNote = tempNote;
             }
         }
         INote currentClassNote = null;
@@ -302,6 +306,7 @@ namespace SchoolRing
         {
             if (!Program.vdRepo.IsTodayVacation())
             {
+                labelForVacation.BackColor = Color.Gray;
                 MessageBox.Show($"{currentClassNote.Text}", "Записки за този час");
             }
         }
@@ -896,6 +901,8 @@ namespace SchoolRing
                 checkBox1.ForeColor = Color.White;
                 checkBox1.Font = new Font(checkBox1.Font, FontStyle.Bold);
                 SaveTheData.SaveProperties();
+                if (string.IsNullOrEmpty(Program.melodyForStartOfClassPath) || string.IsNullOrEmpty(Program.melodyForEndOfClassPath))
+                    MessageBox.Show("Моля, изберете мелодии за начало и край на час чрез менюто в горния десен ъгъл!", "Предупреждение");
             }
             else
             {

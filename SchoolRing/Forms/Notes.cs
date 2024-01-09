@@ -265,8 +265,10 @@ namespace SchoolRing.Forms
         {
             searchMode = false;
             panelSearch.Hide();
+            textBoxNote.Text = "";
             textBoxSearchInput.Text = "";
             listBoxShowSearch.Items.Clear();
+            monthCalendar1.SelectionStart = DateTime.Now;
             if (listBoxClasses.Items.Count > 0)
             {
                 listBoxClasses.ClearSelected();

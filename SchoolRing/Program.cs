@@ -76,6 +76,10 @@ namespace SchoolRing
                         item.MergeClassWith(schoolClass);
                     }
                 }
+                timerForSavingData = new System.Windows.Forms.Timer();
+                timerForSavingData.Interval = 5000;
+                timerForSavingData.Tick += TimerForSavingData_Tick;
+                timerForSavingData.Start();
                 timer = new System.Windows.Forms.Timer();
                 timer.Interval = 50;
                 timer.Tick += Timer_Tick;
@@ -105,6 +109,7 @@ namespace SchoolRing
                 //RestartAsAdministrator();
             }
         }
+
         private static bool IsRunAsAdministrator()
         {
             WindowsIdentity identity = WindowsIdentity.GetCurrent();
@@ -138,6 +143,7 @@ namespace SchoolRing
 
         public static TimeForClockAndText time;
         static System.Windows.Forms.Timer timer;
+        static System.Windows.Forms.Timer timerForSavingData;
         public static IVacationalDaysRepository vdRepo;
         public static INoteRepository<INote> noteRepo;
         private static IController controller;
@@ -288,7 +294,14 @@ namespace SchoolRing
             }
 
         }
-
+        private static void TimerForSavingData_Tick(object sender, EventArgs e)
+        {
+            SaveTheData.SaveSchoolClasses();
+            SaveTheData.SaveVacation();
+            SaveTheData.SaveTimes();
+            SaveTheData.SaveProperties();
+            SaveTheData.SaveNotes();
+        }
         public static List<ISchoolClass> MergableClasses(string day)
         {
             List<ISchoolClass> mergable = new List<ISchoolClass>();
