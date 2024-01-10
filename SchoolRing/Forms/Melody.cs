@@ -24,7 +24,7 @@ namespace SchoolRing
             InitializeComponent();
             timer = new System.Windows.Forms.Timer();
             timerForFixedLength = new System.Windows.Forms.Timer();
-            timer.Interval = 50;
+            timer.Interval = 100;
             if (Program.fixedMelodyLength != 0)
                 timerForFixedLength.Interval = Program.fixedMelodyLength * 1000;
             timer.Tick += Timer_Tick;
@@ -104,7 +104,7 @@ namespace SchoolRing
             else
             {
                 labelStartClassMelodyName.AutoSize = true;
-                labelStartClassMelodyName.Left -= 2;
+                labelStartClassMelodyName.Left -= 4;
                 if (labelStartClassMelodyName.Right < 200 - labelStartClassMelodyName.Width)
                 {
                     labelStartClassMelodyName.Left = 200 + (labelNachaloNaChas.Width / 4);
@@ -121,7 +121,7 @@ namespace SchoolRing
             else
             {
                 labelEndClassMelodyName.AutoSize = true;
-                labelEndClassMelodyName.Left -= 2;
+                labelEndClassMelodyName.Left -= 4;
                 if (labelEndClassMelodyName.Right < 235 - labelKraiNaChas.Width)
                 {
                     labelEndClassMelodyName.Left = 205 + (labelKraiNaChas.Width / 3);
@@ -210,6 +210,7 @@ namespace SchoolRing
         {
             SaveTheData.SaveProperties();
             Program.LastForms.Pop().Show();
+            this.Dispose();
             this.Close();
         }
 

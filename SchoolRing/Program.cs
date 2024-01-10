@@ -7,14 +7,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.Xml;
-using System.Security.Policy;
 using System.Security.Principal;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.AxHost;
 
 namespace SchoolRing
 {
@@ -76,12 +71,8 @@ namespace SchoolRing
                         item.MergeClassWith(schoolClass);
                     }
                 }
-                timerForSavingData = new System.Windows.Forms.Timer();
-                timerForSavingData.Interval = 5000;
-                timerForSavingData.Tick += TimerForSavingData_Tick;
-                timerForSavingData.Start();
                 timer = new System.Windows.Forms.Timer();
-                timer.Interval = 50;
+                timer.Interval = 200;
                 timer.Tick += Timer_Tick;
                 timer.Tick += Timer_Tick1;
                 timer.Start();
@@ -99,7 +90,7 @@ namespace SchoolRing
                     allowRinging = false;
                 }
                 else
-                    Application.Run(new MainMenu());
+                    Application.Run(MainMenu.Instance);
 
                 mutex.ReleaseMutex();
             }
@@ -132,8 +123,7 @@ namespace SchoolRing
             }
             catch (Exception)
             {
-                // The user canceled the UAC prompt
-                // Handle accordingly or simply exit
+                //TODO
             }
 
             Environment.Exit(0); // Exit the current instance
@@ -143,7 +133,6 @@ namespace SchoolRing
 
         public static TimeForClockAndText time;
         static System.Windows.Forms.Timer timer;
-        static System.Windows.Forms.Timer timerForSavingData;
         public static IVacationalDaysRepository vdRepo;
         public static INoteRepository<INote> noteRepo;
         private static IController controller;
@@ -242,13 +231,20 @@ namespace SchoolRing
         {
 
             bool formIsVisible = false;
+            //Point point = new Point();
             foreach (Form form in Application.OpenForms)
             {
                 if (form.Visible)
                 {
+                    //point = form.Location;
                     formIsVisible = true;
                     break;
                 }
+                //else
+                //{
+                //    if (formIsVisible)
+                //        form.Location = point;
+                //}
             }
             //АКО НЯМА ВИДИМИ ДА ЗАТВОРИ ВСИЧКИ СКРИТИ
             if (!formIsVisible)
@@ -293,14 +289,6 @@ namespace SchoolRing
 
             }
 
-        }
-        private static void TimerForSavingData_Tick(object sender, EventArgs e)
-        {
-            SaveTheData.SaveSchoolClasses();
-            SaveTheData.SaveVacation();
-            SaveTheData.SaveTimes();
-            SaveTheData.SaveProperties();
-            SaveTheData.SaveNotes();
         }
         public static List<ISchoolClass> MergableClasses(string day)
         {

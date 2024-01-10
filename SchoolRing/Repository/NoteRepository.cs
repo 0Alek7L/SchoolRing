@@ -36,7 +36,7 @@ namespace SchoolRing.Repository
 
         public void RemoveModel(INote model)
         {
-            _notes .Remove(model);
+            _notes.Remove(model);
         }
 
         public void UpdateModel(INote model)

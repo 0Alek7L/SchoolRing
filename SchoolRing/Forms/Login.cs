@@ -17,7 +17,7 @@ namespace SchoolRing
         {
             InitializeComponent();
             timer = new Timer();
-            timer.Interval = 50;
+            timer.Interval = 200;
             timer.Tick += Timer_Tick;
             timer.Start();
             Program.ShowTheCurrentIcon(pictureBox3);

@@ -15,7 +15,7 @@ namespace SchoolRing
             if (!Program.HaveBeenIntoMainMenu)
                 Program.LastForms.Push(this);
             timer = new Timer();
-            timer.Interval = 50;
+            timer.Interval = 200;
             timer.Tick += Timer_Tick;
             timer.Start();
             if (Program.HaveBeenIntoMainMenu)

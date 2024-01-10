@@ -29,7 +29,7 @@ namespace SchoolRing.Forms
         {
             InitializeComponent();
             timer = new Timer();
-            timer.Interval = 50;
+            timer.Interval = 200;
             timer.Tick += Timer_Tick;
             timer.Start();
             Program.ShowTheCurrentIcon(pictureBox3);
@@ -50,6 +50,7 @@ namespace SchoolRing.Forms
         {
             Program.LastForms.Pop().Show();
             SaveTheData.SaveNotes();
+            this.Dispose();
             this.Close();
         }
 

@@ -1,20 +1,12 @@
-﻿using NAudio.Wave;
-using SchoolRing.Forms;
+﻿using SchoolRing.Forms;
 using SchoolRing.Interfaces;
 using SchoolRing.IO;
-using SchoolRing.Repository;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Forms;
-using System.Windows.Media.Animation;
 
 namespace SchoolRing
 {
@@ -22,8 +14,7 @@ namespace SchoolRing
     {
         private static MainMenu instance;
         System.Windows.Forms.Timer timer;
-        System.Windows.Forms.Timer timerForNotes;
-        System.Windows.Forms.Timer timerForMelody;
+        System.Windows.Forms.Timer timerForDisposment;
         List<ISchoolClass> classesLeftAsObjects;
         public MainMenu()
         {
@@ -34,19 +25,17 @@ namespace SchoolRing
             Program.HaveBeenIntoMainMenu = true;
             //SaveTheData.SaveSchoolClasses();
             timer = new System.Windows.Forms.Timer();
-            timerForNotes = new System.Windows.Forms.Timer();
-            timerForMelody = new System.Windows.Forms.Timer();
-            timer.Interval = 50;
-            timerForMelody.Interval = 200;//501
-            timerForNotes.Interval = 500;
+            timerForDisposment = new System.Windows.Forms.Timer();
+            timer.Interval = 100;
+            timerForDisposment.Interval = 5000;
             timer.Tick += Timer_Tick;
             timer.Tick += Timer_TickForMovingLabel;
-            timerForNotes.Tick += Timer_TickForNotes;
+            timer.Tick += Timer_TickForNotes;
+            timerForDisposment.Tick += Timer_TickForDisposingTheHiddenForms;
             //timer.Tick += Timer_TickForSpecialTasks;
-            timerForMelody.Tick += Timer_TickForMelody;
+            timer.Tick += Timer_TickForMelody;
             timer.Start();
-            timerForNotes.Start();
-            timerForMelody.Start();
+            timerForDisposment.Start();
             currentClass = null;
             nextClass = null;
             labelShowNextClass.Text = "-";
@@ -84,6 +73,22 @@ namespace SchoolRing
             }
             Program.ShowTheCurrentIcon(pictureBox3);
             labelForVacation.Click += LabelForVacation_Click;
+        }
+
+        private void Timer_TickForDisposingTheHiddenForms(object sender, EventArgs e)
+        {
+            if (this.Visible == true && this is MainMenu)
+            {
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (!form.Visible)
+                    {
+                        
+                        //form.Dispose();
+                        break;
+                    }
+                }
+            }
         }
 
         public static MainMenu Instance
@@ -188,7 +193,7 @@ namespace SchoolRing
                 checkBox1.Checked = false;
             //---
 
-            labelForHolidays.Left -= 3;
+            labelForHolidays.Left -= 4;
             if (labelForHolidays.Right < 0)
             {
                 labelForHolidays.Left = this.ClientSize.Width;
@@ -261,51 +266,66 @@ namespace SchoolRing
         }
         private void Timer_TickForNotes(object sender, EventArgs e)
         {
-            if (!Program.vdRepo.IsTodayVacation() && Program.noteRepo.GetModels()
-                .Any(n => n.Date.ToShortDateString() == DateTime.Now.ToShortDateString()) && currentClass != null)
+            if (!Program.vdRepo.IsTodayVacation() && currentClass != null)
             {
                 INote tempNote = null;
-                if (!currentClass.IsMerging)
+                labelForVacation.Text = "НАТИСНИ ТУК!";
+                labelForVacation.Cursor = Cursors.Hand;
+                labelForVacation.Show();
+                if (Program.noteRepo.GetModels()
+                .Any(n => n.Date.ToShortDateString() == DateTime.Now.ToShortDateString()))
                 {
-                    tempNote = Program.noteRepo.FirstModel(DateTime.Now, currentClass.Num, currentClass.IsPurvaSmqna);
-                }
-                else
-                {
-                    if (new TimeSpan(currentClass.StartHours, currentClass.StartMinutes, 0)
-                        .Add(TimeSpan.FromMinutes(Program.ClassLength)) < new TimeSpan(DateTime.Now.Hour,
-                        DateTime.Now.Minute, DateTime.Now.Second))//if the second hour has started
-                    {
-                        if (currentClass.IsPurvaSmqna && currentClass.Num == 7)
-                        {
-                            tempNote = Program.noteRepo.FirstModel(DateTime.Now, 1, false);
-                        }
-                        else
-                        {
-                            tempNote = Program.noteRepo.FirstModel(DateTime.Now,
-                                currentClass.Num + 1, currentClass.IsPurvaSmqna);
-                        }
-                    }
-                    else
+                    if (!currentClass.IsMerging)
                     {
                         tempNote = Program.noteRepo.FirstModel(DateTime.Now, currentClass.Num, currentClass.IsPurvaSmqna);
                     }
+                    else
+                    {
+                        if (new TimeSpan(currentClass.StartHours, currentClass.StartMinutes, 0)
+                            .Add(TimeSpan.FromMinutes(Program.ClassLength)) < new TimeSpan(DateTime.Now.Hour,
+                            DateTime.Now.Minute, DateTime.Now.Second))//if the second hour has started
+                        {
+                            if (currentClass.IsPurvaSmqna && currentClass.Num == 7)
+                            {
+                                tempNote = Program.noteRepo.FirstModel(DateTime.Now, 1, false);
+                            }
+                            else
+                            {
+                                tempNote = Program.noteRepo.FirstModel(DateTime.Now,
+                                    currentClass.Num + 1, currentClass.IsPurvaSmqna);
+                            }
+                        }
+                        else
+                        {
+                            tempNote = Program.noteRepo.FirstModel(DateTime.Now, currentClass.Num, currentClass.IsPurvaSmqna);
+                        }
 
+                    }
+                    if (currentClassNote != tempNote && tempNote != null)
+                    {
+                        labelForVacation.BackColor = Color.FromArgb(189, 191, 9);
+                    }
+
+                    currentClassNote = tempNote;
                 }
-                if (currentClassNote!=tempNote)
+                if (tempNote == null||currentClassNote==null)
                 {
-                    labelForVacation.Text = "НАТИСНИ ТУК!";
-                    labelForVacation.BackColor = Color.FromArgb(189, 191, 9);
-                    labelForVacation.Cursor = Cursors.Hand;
-                    labelForVacation.Show();
+                    labelForVacation.Hide();
                 }
-                currentClassNote = tempNote;
             }
+
         }
         INote currentClassNote = null;
         private void LabelForVacation_Click(object sender, EventArgs e)
         {
             if (!Program.vdRepo.IsTodayVacation())
             {
+                //StringBuilder sb = new StringBuilder();
+                //foreach (var item in Program.noteRepo.GetModels())
+                //{
+                //    sb.AppendLine(item.Date.ToShortTimeString() + " " + item.ClassNum + " " + item.Text);
+                //}
+                //MessageBox.Show(sb.ToString());
                 labelForVacation.BackColor = Color.Gray;
                 MessageBox.Show($"{currentClassNote.Text}", "Записки за този час");
             }
@@ -719,11 +739,10 @@ namespace SchoolRing
                 else
                     UpdateLabelsWithoutClassSchedule();
             }
-            if (this.Visible)
-            {
-                timerForMelody.Enabled = true;
-                timer.Enabled = true;
-            }
+            //if (this.Visible)
+            //{
+            //    timer.Enabled = true;
+            //}
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -900,7 +919,14 @@ namespace SchoolRing
                 labelMelody.Show();
                 checkBox1.ForeColor = Color.White;
                 checkBox1.Font = new Font(checkBox1.Font, FontStyle.Bold);
-                SaveTheData.SaveProperties();
+                try
+                {
+                    SaveTheData.SaveProperties();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 if (string.IsNullOrEmpty(Program.melodyForStartOfClassPath) || string.IsNullOrEmpty(Program.melodyForEndOfClassPath))
                     MessageBox.Show("Моля, изберете мелодии за начало и край на час чрез менюто в горния десен ъгъл!", "Предупреждение");
             }
@@ -910,7 +936,7 @@ namespace SchoolRing
                 checkBox1.ForeColor = Color.Red;
                 pictureBoxMelodyButton.Hide();
                 labelMelody.Hide();
-                checkBox1.Font = new Font(checkBox1.Font, FontStyle.Strikeout);
+                checkBox1.Font = new Font(checkBox1.Font, FontStyle.Italic);
                 SaveTheData.SaveProperties();
             }
             SaveTheData.SaveProperties();

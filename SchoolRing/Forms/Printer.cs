@@ -3,21 +3,13 @@ using OfficeOpenXml.Style;
 using SchoolRing.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 
 namespace SchoolRing
@@ -30,7 +22,7 @@ namespace SchoolRing
         {
             InitializeComponent();
             timer = new Timer();
-            timer.Interval = 50;
+            timer.Interval = 200;
             timer.Tick += Timer_Tick;
             timer.Start();
 
@@ -190,6 +182,7 @@ namespace SchoolRing
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             Program.LastForms.Pop().Show();
+            this.Dispose();
             this.Close();
         }
 

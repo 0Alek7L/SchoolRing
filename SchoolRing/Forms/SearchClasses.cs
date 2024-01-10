@@ -18,7 +18,7 @@ namespace SchoolRing
         {
             InitializeComponent();
             timer = new Timer();
-            timer.Interval = 50;
+            timer.Interval = 200;
             timer.Tick += Timer_Tick;
             timer.Start();
             Program.ShowTheCurrentIcon(pictureBox3);
@@ -33,6 +33,7 @@ namespace SchoolRing
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             Program.LastForms.Pop().Show();
+            this.Dispose();
             this.Close();
         }
 

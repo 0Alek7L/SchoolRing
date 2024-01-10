@@ -21,7 +21,7 @@ namespace SchoolRing
         {
             InitializeComponent();
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = 50;
+            timer.Interval = 200;
             timer.Tick += Timer_Tick;
             timer.Start();
             chosenClass = null;

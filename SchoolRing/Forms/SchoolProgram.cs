@@ -29,7 +29,7 @@ namespace SchoolRing
             Program.WithClassSchedule = true;
             list = listBoxMonday;
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = 50;
+            timer.Interval = 200;
             timer.Tick += Timer_Tick;
             timer.Start();
             Program.ShowTheCurrentIcon(pictureBox3);
@@ -512,6 +512,7 @@ namespace SchoolRing
             Program.WithClassSchedule = true;
             Program.LastForms.Push(this);
             //MainMenu mainMenu = new MainMenu();
+            this.Dispose();
             this.Close();
             //mainMenu.Show();
             MainMenu.Instance.Show();
