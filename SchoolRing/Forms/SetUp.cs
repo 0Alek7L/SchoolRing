@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading;
-using System.Timers;
 using System.Windows.Forms;
 
 namespace SchoolRing
@@ -128,24 +126,28 @@ namespace SchoolRing
             Program.LastForms.Push(this);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void buttonContinue_MouseEnter(object sender, EventArgs e)
         {
-
+            buttonContinue.ForeColor = System.Drawing.Color.White;
+            buttonContinue.BackColor = System.Drawing.Color.FromArgb(189, 191, 9);
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void buttonContinue_MouseLeave(object sender, EventArgs e)
         {
-
+            buttonContinue.BackColor = System.Drawing.Color.White;
+            buttonContinue.ForeColor = System.Drawing.Color.FromArgb(189, 191, 9);
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void dEFAULTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Program.ChangeCustomIcon(pictureBox3, false);
+            Program.customIconPath = null;
         }
 
-        private void labelDayOfWeek_Click(object sender, EventArgs e)
+        private void cUSTOMToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Program.ChoosePathForCustomIcon(contextMenuStrip1);
+            Program.ChangeCustomIcon(pictureBox3, true);
         }
     }
 }

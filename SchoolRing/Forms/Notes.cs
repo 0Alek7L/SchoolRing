@@ -37,6 +37,7 @@ namespace SchoolRing.Forms
             FillTheListBox();
             selectedDate = DateTime.Today;
             panelWrite.Parent = this;
+            textBox1.Text = Program.textSizeForNotes.ToString();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -84,17 +85,27 @@ namespace SchoolRing.Forms
 
         private void buttonSearch_MouseLeave(object sender, EventArgs e) =>
              buttonSearch.FlatStyle = FlatStyle.Popup;
-
-        private void FillTheListBox()
+        private void UpdateDayOfWeek()
         {
             switch (monthCalendar1.SelectionStart.DayOfWeek)
             {
+                case DayOfWeek.Sunday: selectedDayOfWeek = $"{TimeForClockAndText.dayOfWeekSunday}"; break;
                 case DayOfWeek.Monday: selectedDayOfWeek = $"{TimeForClockAndText.dayOfWeekMonday}"; break;
                 case DayOfWeek.Tuesday: selectedDayOfWeek = $"{TimeForClockAndText.dayOfWeekTuesday}"; break;
                 case DayOfWeek.Wednesday: selectedDayOfWeek = $"{TimeForClockAndText.dayOfWeekWednesday}"; break;
                 case DayOfWeek.Thursday: selectedDayOfWeek = $"{TimeForClockAndText.dayOfWeekThursday}"; break;
                 case DayOfWeek.Friday: selectedDayOfWeek = $"{TimeForClockAndText.dayOfWeekFriday}"; break;
+                case DayOfWeek.Saturday: selectedDayOfWeek = $"{TimeForClockAndText.dayOfWeekSaturday}"; break;
             }
+        }
+        private void FillTheListBox()
+        {
+            UpdateDayOfWeek();
+            UpdateModels();
+        }
+
+        private void UpdateModels()
+        {
             classes = Program.GetModels()
                 .Where(sc => sc.Day == selectedDayOfWeek)
                 .OrderBy(sc => !sc.IsPurvaSmqna)
@@ -103,7 +114,10 @@ namespace SchoolRing.Forms
             listBoxClasses.Items.Clear();
             foreach (var c in classes)
             {
-                listBoxClasses.Items.Add(c.ShowTheRecord());
+                if (Program.noteRepo.IsThereAModel(selectedDate, c.Num, c.IsPurvaSmqna))
+                    listBoxClasses.Items.Add("✏️" + c.ShowTheRecord());
+                else
+                    listBoxClasses.Items.Add(c.ShowTheRecord());
                 listBoxClasses.SelectedIndex = 0;
             }
         }
@@ -162,6 +176,8 @@ namespace SchoolRing.Forms
             {
                 FillTheListBox();
             }
+            UpdateDayOfWeek();
+            UpdateLabels();
         }
 
         private void buttonWriteNewNote_Click(object sender, EventArgs e)
@@ -183,6 +199,7 @@ namespace SchoolRing.Forms
                 {
                     FontFamily fontFamily = new FontFamily("Jura");
                     textBoxNote.Font = new Font(fontFamily, float.Parse(textBox1.Text));
+                    Program.textSizeForNotes=int.Parse(textBox1.Text);
                 }
             }
         }
@@ -194,7 +211,7 @@ namespace SchoolRing.Forms
 
         private void pictureBoxDeleteNote_Click(object sender, EventArgs e)
         {
-            if (!Program.noteRepo.IsThereAModel(selectedDate, selectedClass.Num, selectedClass.IsPurvaSmqna)&&!searchMode)
+            if (!Program.noteRepo.IsThereAModel(selectedDate, selectedClass.Num, selectedClass.IsPurvaSmqna) && !searchMode)
             {
                 INote note = new Note(textBoxNote.Text, selectedDate, DateTime.Now, selectedClass.Num, selectedClass.IsPurvaSmqna);
                 Program.noteRepo.AddModel(note);
@@ -221,6 +238,7 @@ namespace SchoolRing.Forms
             }
             if (searchMode)
                 panelSearch.Show();
+            UpdateModels();
         }
 
         private void pictureBoxSaveNote_Click(object sender, EventArgs e)
@@ -255,6 +273,10 @@ namespace SchoolRing.Forms
             {
                 MessageBox.Show("Грешка: " + ex.Message);
             }
+            finally
+            {
+                UpdateModels();
+            }
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -283,44 +305,48 @@ namespace SchoolRing.Forms
             pictureBoxEditSearchNote.Hide();
             if (!string.IsNullOrEmpty(textBoxSearchInput.Text))
             {
-                notes = Program.noteRepo.GetModels().Where(n => n.Text.Contains(textBoxSearchInput.Text)).ToArray();
-                if (notes.Length > 0)
+                if (radioButtonContent.Checked)
                 {
-                    notes.OrderBy(n => n.Date)
-                        .ThenBy(n => n.ClassNum)
-                        .ThenBy(n => n.Purva)
-                        .ToList();
-                    foreach (var note in notes)
-                    {
-                        string day = "";
-                        string containingText = "";
-                        switch (note.Date.DayOfWeek)
-                        {
-                            case DayOfWeek.Monday: day = TimeForClockAndText.dayOfWeekMonday; break;
-                            case DayOfWeek.Tuesday: day = TimeForClockAndText.dayOfWeekTuesday; break;
-                            case DayOfWeek.Wednesday: day = TimeForClockAndText.dayOfWeekWednesday; break;
-                            case DayOfWeek.Thursday: day = TimeForClockAndText.dayOfWeekThursday; break;
-                            case DayOfWeek.Friday: day = TimeForClockAndText.dayOfWeekFriday; break;
-                        }
-                        int stringIndex = note.Text.IndexOf(textBoxSearchInput.Text);
-                        for (int i = 5; i > 0; i--)
-                        {
-                            if (note.Text.Length >= stringIndex + i)
-                            {
-                                containingText += note.Text.Substring(stringIndex, i);
-                                break;
-                            }
-                        }
+                    notes = Program.noteRepo.GetModels().Where(n => n.Text.Contains(textBoxSearchInput.Text)).ToArray();
 
-                        listBoxShowSearch.Items.Add($"{note.Date.ToString("dd/MM/yyyy")} {Program.GetModels().First(x => x.Day == day && x.Num == note.ClassNum && x.IsPurvaSmqna == note.Purva).Day} " +
-                            $"{Program.GetModels().First(x => x.Day == day && x.Num == note.ClassNum && x.IsPurvaSmqna == note.Purva).ShowTheRecord()}" +
-                            $" -> \"{containingText}\"");
+                    if (notes.Length > 0)
+                    {
+                        notes.OrderBy(n => n.Date)
+                            .ThenBy(n => n.ClassNum)
+                            .ThenBy(n => n.Purva)
+                            .ToList();
+                        foreach (var note in notes)
+                        {
+                            string day = "";
+                            string containingText = "";
+                            switch (note.Date.DayOfWeek)
+                            {
+                                case DayOfWeek.Monday: day = TimeForClockAndText.dayOfWeekMonday; break;
+                                case DayOfWeek.Tuesday: day = TimeForClockAndText.dayOfWeekTuesday; break;
+                                case DayOfWeek.Wednesday: day = TimeForClockAndText.dayOfWeekWednesday; break;
+                                case DayOfWeek.Thursday: day = TimeForClockAndText.dayOfWeekThursday; break;
+                                case DayOfWeek.Friday: day = TimeForClockAndText.dayOfWeekFriday; break;
+                            }
+                            int stringIndex = note.Text.IndexOf(textBoxSearchInput.Text);
+                            for (int i = 5; i > 0; i--)
+                            {
+                                if (note.Text.Length >= stringIndex + i)
+                                {
+                                    containingText += note.Text.Substring(stringIndex, i);
+                                    break;
+                                }
+                            }
+
+                            listBoxShowSearch.Items.Add($"{note.Date.ToString("dd/MM/yyyy")} {Program.GetModels().First(x => x.Day == day && x.Num == note.ClassNum && x.IsPurvaSmqna == note.Purva).Day} " +
+                                $"{Program.GetModels().First(x => x.Day == day && x.Num == note.ClassNum && x.IsPurvaSmqna == note.Purva).ShowTheRecord()}" +
+                                $" -> \"{containingText}\"");
+                        }
                     }
-                }
-                else
-                {
-                    listBoxShowSearch.Items.Add($"Не са намерени записки, съдържащи \"{textBoxSearchInput.Text}\"!");
-                    pictureBoxEditSearchNote.Hide();
+                    else
+                    {
+                        listBoxShowSearch.Items.Add($"Не са намерени записки, съдържащи \"{textBoxSearchInput.Text}\"!");
+                        pictureBoxEditSearchNote.Hide();
+                    }
                 }
             }
         }
@@ -358,6 +384,36 @@ namespace SchoolRing.Forms
             searchMode = true;
             textBoxSearchInput.Text = "";
             UpdateLabels();
+        }
+
+        private void radioButtonClassOrParalelka_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxSearchInput.Text = "";
+        }
+
+        private void pictureBoxLowerTextSize_Click(object sender, EventArgs e)
+        {
+            int temp;
+            if (textBox1.Text == "")
+                temp = 16;
+            else
+                temp = int.Parse(textBox1.Text);
+            temp--;
+            if (temp < 11)
+                MessageBox.Show("Минималният размер на текста е 11.", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                textBox1.Text = temp.ToString();
+        }
+
+        private void pictureBoxEnlargeTextSize_Click(object sender, EventArgs e)
+        {
+            int temp;
+            if (textBox1.Text == "")
+                temp = 16;
+            else
+                temp = int.Parse(textBox1.Text);
+            temp++;
+            textBox1.Text = temp.ToString();
         }
     }
 }

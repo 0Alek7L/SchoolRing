@@ -33,6 +33,30 @@ namespace SchoolRing
             timer.Tick += Timer_Tick;
             timer.Start();
             Program.ShowTheCurrentIcon(pictureBox3);
+            if (radioButtonFirst.Checked || radioButtonSecond.Checked)
+            {
+                comboBox1ClassNumber.Show();
+                comboBoxClassGrade.Show();
+                comboBoxClassParalelka.Show();
+                checkBox1.Show();
+                listBoxMonday.Show();
+                listBoxTuesday.Show();
+                listBoxWednesday.Show();
+                listBoxThursday.Show();
+                listBoxFriday.Show();
+            }
+            else
+            {
+                comboBox1ClassNumber.Hide();
+                comboBoxClassGrade.Hide();
+                comboBoxClassParalelka.Hide();
+                checkBox1.Hide();
+                listBoxMonday.Hide();
+                listBoxTuesday.Hide();
+                listBoxWednesday.Hide();
+                listBoxThursday.Hide();
+                listBoxFriday.Hide();
+            }
         }
         private void ShowMessageForIdiots()
         {
@@ -102,36 +126,19 @@ namespace SchoolRing
         }
 
 
-        private void buttonSetFreeClass_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                comboBoxClassParalelka.SelectedIndex = -1;
-                comboBoxClassGrade.SelectedIndex = -1;
-                buttonSetFreeClass.ForeColor = Color.Black;
-                buttonSetFreeClass.Font = new Font(buttonSetFreeClass.Font, FontStyle.Bold);
-            }
-            finally
-            {
-                isFree = true;
-            }
-        }
-
         private void comboBoxClassGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
             isFree = false;
-            if (!isFree)
-            {
-                buttonSetFreeClass.ForeColor = Color.GhostWhite;
-                buttonSetFreeClass.Font = new Font(buttonSetFreeClass.Font, FontStyle.Italic);
-                buttonSetFreeClass.Font = new Font(buttonSetFreeClass.Font, FontStyle.Strikeout);
-            }
         }
 
         private void buttonSaveRecord_Click(object sender, EventArgs e)
         {
             try
             {
+                if (checkBox1.Checked)
+                    isFree = true;
+                else
+                    isFree = false;
                 if (!radioButtonFirst.Checked && !radioButtonSecond.Checked)
                     throw new ArgumentException("Моля, изберете учебна смяна!");
                 if (comboBox1ClassNumber.SelectedIndex == -1 && !isFree)
@@ -139,7 +146,7 @@ namespace SchoolRing
                 if (comboBoxClassGrade.SelectedIndex == -1 && !isFree)
                     throw new ArgumentException("Моля, изберете клас!");
                 if (comboBoxClassParalelka.SelectedIndex == -1 && !isFree)
-                    throw new ArgumentException("Моля, изберете, паралелка!");
+                    throw new ArgumentException("Моля, изберете паралелка!");
                 if (isFree)
                 {
                     AddToListBox(list, purvaSmqna, true, int.Parse(comboBox1ClassNumber.Text), 0, null);
@@ -150,7 +157,6 @@ namespace SchoolRing
                     AddToListBox(list, purvaSmqna, false, int.Parse(comboBox1ClassNumber.Text), int.Parse(comboBoxClassGrade.Text), comboBoxClassParalelka.Text);
                     ShowCheck();
                 }
-                buttonSetFreeClass_Click(sender, e);
                 comboBox1ClassNumber.SelectedIndex = -1;
             }
             catch (FormatException)
@@ -250,6 +256,17 @@ namespace SchoolRing
 
         private void radioButtonFirst_CheckedChanged(object sender, EventArgs e)
         {
+
+            comboBox1ClassNumber.Show();
+            comboBoxClassGrade.Show();
+            comboBoxClassParalelka.Show();
+            checkBox1.Show();
+            listBoxMonday.Show();
+            listBoxTuesday.Show();
+            listBoxWednesday.Show();
+            listBoxThursday.Show();
+            listBoxFriday.Show();
+
             if (radioButtonFirst.Checked)
             {
                 radioButtonFirst.ForeColor = Color.White;
@@ -378,14 +395,18 @@ namespace SchoolRing
                 int selectedIndexParalelka = 0;
                 switch (schoolClass.ClassGrade)
                 {
-                    case 5: selectedIndexGrade = 0; break;
-                    case 6: selectedIndexGrade = 1; break;
-                    case 7: selectedIndexGrade = 2; break;
-                    case 8: selectedIndexGrade = 3; break;
-                    case 9: selectedIndexGrade = 4; break;
-                    case 10: selectedIndexGrade = 5; break;
-                    case 11: selectedIndexGrade = 6; break;
-                    case 12: selectedIndexGrade = 7; break;
+                    case 1: selectedIndexGrade = 0; break;
+                    case 2: selectedIndexGrade = 1; break;
+                    case 3: selectedIndexGrade = 2; break;
+                    case 4: selectedIndexGrade = 3; break;
+                    case 5: selectedIndexGrade = 4; break;
+                    case 6: selectedIndexGrade = 5; break;
+                    case 7: selectedIndexGrade = 6; break;
+                    case 8: selectedIndexGrade = 7; break;
+                    case 9: selectedIndexGrade = 8; break;
+                    case 10: selectedIndexGrade = 9; break;
+                    case 11: selectedIndexGrade = 10; break;
+                    case 12: selectedIndexGrade = 11; break;
                 }
                 switch (schoolClass.Paralelka)
                 {
@@ -400,13 +421,12 @@ namespace SchoolRing
                 comboBox1ClassNumber.SelectedIndex = num - 1;
                 comboBoxClassGrade.SelectedIndex = selectedIndexGrade;
                 comboBoxClassParalelka.SelectedIndex = selectedIndexParalelka;
+                checkBox1.Checked = false;
             }
             else
             {
                 comboBox1ClassNumber.SelectedIndex = num - 1;
-                buttonSetFreeClass.ForeColor = Color.Black;
-                buttonSetFreeClass.Font = new Font(buttonSetFreeClass.Font, FontStyle.Bold);
-                isFree = true;
+                checkBox1.Checked = true;
             }
         }
 
@@ -521,7 +541,7 @@ namespace SchoolRing
 
         private void buttonClearTheRepo_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Сигурни ли сте, че желаете да изчистите програмата?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Сигурни ли сте, че желаете да изчистите учебното разписание?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 Program.ClearTheSchedule();
@@ -536,7 +556,7 @@ namespace SchoolRing
                 FirstTimeFillListBoxes(3, false);
                 FirstTimeFillListBoxes(4, false);
                 FirstTimeFillListBoxes(5, false);
-                MessageBox.Show("Вие изчистихте програмата успешно!");
+                MessageBox.Show("Вие изчистихте разписанието успешно!");
                 radioButtonSecond.Checked = true;
                 radioButtonFirst.Checked = true;
             }
@@ -545,20 +565,23 @@ namespace SchoolRing
         private void label4_MouseEnter(object sender, EventArgs e)
         {
             label4.ForeColor = Color.FromArgb(34, 146, 164);
+            label4.BackColor = Color.White;
             label4.Font = new Font(label4.Font, FontStyle.Bold);
             label4.BorderStyle = BorderStyle.Fixed3D;
         }
 
         private void label4_MouseLeave(object sender, EventArgs e)
         {
-            label4.ForeColor = Color.DarkSlateGray;
+            label4.BackColor = Color.FromArgb(34, 146, 164);
+            label4.ForeColor = Color.White;
             label4.Font = new Font(label4.Font, FontStyle.Regular);
             label4.BorderStyle = BorderStyle.FixedSingle;
+
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Сигурни ли сте, че желаете да продължите без учебна програма?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Сигурни ли сте, че желаете да продължите без учебно разписание?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 Program.WithClassSchedule = false;
@@ -580,6 +603,72 @@ namespace SchoolRing
         {
             Program.ChoosePathForCustomIcon(contextMenuStrip1);
             Program.ChangeCustomIcon(pictureBox3, true);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                isFree = true;
+                comboBoxClassParalelka.SelectedIndex = -1;
+                comboBoxClassGrade.SelectedIndex = -1;
+                comboBoxClassGrade.Enabled = false;
+                comboBoxClassGrade.BackColor = Color.LightGray;
+                comboBoxClassParalelka.Enabled = false;
+                comboBoxClassParalelka.BackColor = Color.LightGray;
+                checkBox1.Font = new Font(checkBox1.Font, FontStyle.Bold);
+
+            }
+            else
+            {
+                isFree = false;
+                comboBoxClassGrade.Enabled = true;
+                comboBoxClassGrade.BackColor = Color.FromArgb(189, 191, 9);
+                comboBoxClassParalelka.Enabled = true;
+                comboBoxClassParalelka.BackColor = Color.FromArgb(189, 191, 9);
+                checkBox1.Font = new Font(checkBox1.Font, FontStyle.Regular);
+                //listBoxMonday.SelectedIndex = -1;
+                //listBoxTuesday.SelectedIndex = -1;
+                //listBoxWednesday.SelectedIndex = -1;
+                //listBoxThursday.SelectedIndex = -1;
+                //listBoxFriday.SelectedIndex = -1;
+            }
+        }
+
+        private void buttonSaveRecord_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSaveRecord.BackColor = Color.FromArgb(217, 108, 6);
+            buttonSaveRecord.ForeColor = Color.White;
+        }
+
+        private void buttonSaveRecord_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSaveRecord.ForeColor = Color.FromArgb(217, 108, 6);
+            buttonSaveRecord.BackColor = Color.White;
+        }
+
+        private void buttonContinueToMainMenu_MouseEnter(object sender, EventArgs e)
+        {
+            buttonContinueToMainMenu.BackColor = Color.FromArgb(189, 191, 9);
+            buttonContinueToMainMenu.ForeColor = Color.White;
+        }
+
+        private void buttonContinueToMainMenu_MouseLeave(object sender, EventArgs e)
+        {
+            buttonContinueToMainMenu.ForeColor = Color.FromArgb(189, 191, 9);
+            buttonContinueToMainMenu.BackColor = Color.White;
+        }
+
+        private void buttonClearTheRepo_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClearTheRepo.ForeColor = Color.FromArgb(34, 146, 164);
+            buttonClearTheRepo.BackColor = Color.White;
+        }
+
+        private void buttonClearTheRepo_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClearTheRepo.BackColor = Color.FromArgb(34, 146, 164);
+            buttonClearTheRepo.ForeColor = Color.White;
         }
     }
 }

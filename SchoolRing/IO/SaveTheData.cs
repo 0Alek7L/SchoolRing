@@ -76,6 +76,7 @@ namespace SchoolRing.IO
             properties.Add("melodyForStartOfClassPath", $"{Program.melodyForStartOfClassPath}");
             properties.Add("melodyForEndOfClassPath", $"{Program.melodyForEndOfClassPath}");
             properties.Add("customIconPath", $"{Program.customIconPath}");
+            properties.Add("textSizeForNotes", $"{Program.textSizeForNotes}");
             dataHandler.SaveEncryptedDataToFile(filePathProperties, properties);
         }
         public static void SaveNotes()//TODO IMPLEMENT THIS
@@ -87,28 +88,36 @@ namespace SchoolRing.IO
         }
         public static void ReadProperties()
         {
-            EncryptedDataHandler dataHandler = new EncryptedDataHandler();
-            Dictionary<string, string> properties = dataHandler.ReadAndDecryptDataProperties(filePathProperties);
-            if (properties["HaveBeenIntoMainMenu"] == "true")
-                Program.HaveBeenIntoMainMenu = true;
-            else
-                Program.HaveBeenIntoMainMenu = false;
-            if (properties["WithClassSchedule"] == "true")
-                Program.WithClassSchedule = true;
-            else
-                Program.WithClassSchedule = false;
-            if (properties["isMessageShown"] == "true")
-                Program.isMessageShown = true;
-            else
-                Program.isMessageShown = false;
-            if (properties["allowRinging"] == "true")
-                Program.allowRinging = true;
-            else
-                Program.allowRinging = false;
-            Program.fixedMelodyLength = int.Parse(properties["fixedMelodyLength"]);
-            Program.melodyForStartOfClassPath = properties["melodyForStartOfClassPath"];
-            Program.melodyForEndOfClassPath = properties["melodyForEndOfClassPath"];
-            Program.customIconPath = properties["customIconPath"];
+            try
+            {
+                EncryptedDataHandler dataHandler = new EncryptedDataHandler();
+                Dictionary<string, string> properties = dataHandler.ReadAndDecryptDataProperties(filePathProperties);
+                if (properties["HaveBeenIntoMainMenu"] == "true")
+                    Program.HaveBeenIntoMainMenu = true;
+                else
+                    Program.HaveBeenIntoMainMenu = false;
+                if (properties["WithClassSchedule"] == "true")
+                    Program.WithClassSchedule = true;
+                else
+                    Program.WithClassSchedule = false;
+                if (properties["isMessageShown"] == "true")
+                    Program.isMessageShown = true;
+                else
+                    Program.isMessageShown = false;
+                if (properties["allowRinging"] == "true")
+                    Program.allowRinging = true;
+                else
+                    Program.allowRinging = false;
+                Program.fixedMelodyLength = int.Parse(properties["fixedMelodyLength"]);
+                Program.melodyForStartOfClassPath = properties["melodyForStartOfClassPath"];
+                Program.melodyForEndOfClassPath = properties["melodyForEndOfClassPath"];
+                Program.customIconPath = properties["customIconPath"];
+                Program.textSizeForNotes = int.Parse(properties["textSizeForNotes"]);
+            }
+            catch(Exception ex)
+            {
+                
+            }
         }
         public static void ReadSchoolClasses()
         {

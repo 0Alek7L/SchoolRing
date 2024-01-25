@@ -170,6 +170,7 @@
     <Compile Include="Forms\Notes.Designer.cs">
       <DependentUpon>Notes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Help info\HelpInfo.cs" />
     <Compile Include="Models\Controller.cs" />
     <Compile Include="Forms\CustomClasses.cs">
       <SubType>Form</SubType>
@@ -287,6 +288,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Printer.resx">
       <DependentUpon>Printer.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SchoolProgram.resx">
       <DependentUpon>SchoolProgram.cs</DependentUpon>
@@ -565,6 +567,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_521.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-sign.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

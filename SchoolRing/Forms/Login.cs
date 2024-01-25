@@ -73,5 +73,17 @@ namespace SchoolRing
             Program.ChoosePathForCustomIcon(contextMenuStrip1);
             Program.ChangeCustomIcon(pictureBox3, true);
         }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.FromArgb(34, 146, 164);
+            button1.BackColor = Color.FromArgb(245, 239, 237);
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.FromArgb(34, 146, 164);
+            button1.ForeColor = Color.FromArgb(245, 239, 237);
+        }
     }
 }

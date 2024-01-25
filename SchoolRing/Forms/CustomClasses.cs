@@ -75,10 +75,23 @@ namespace SchoolRing
             if (comboBoxClass.SelectedIndex != -1)
             {
                 if (comboBoxClass.SelectedIndex < 7)
-                    chosenClass = Program.GetRecord(comboBoxDay.Text,comboBoxClass.SelectedIndex+1,true);
+                    chosenClass = Program.GetRecord(comboBoxDay.Text, comboBoxClass.SelectedIndex + 1, true);
                 else
-                    chosenClass = Program.GetRecord(comboBoxDay.Text,comboBoxClass.SelectedIndex-6,false);
+                    chosenClass = Program.GetRecord(comboBoxDay.Text, comboBoxClass.SelectedIndex - 6, false);
+                if (!chosenClass.IsFree)
+                {
+                    if (chosenClass.ClassGrade != 0)
+                        textBoxClassName.Text = chosenClass.ClassGrade + chosenClass.Paralelka;
+                    else
+                        textBoxClassName.Text = chosenClass.Paralelka;
 
+                }
+                else
+                    textBoxClassName.Text = "";
+                if (comboBoxClass.SelectedIndex < 7 && comboBoxClass.SelectedIndex > -1)
+                    listBox1.SelectedIndex = comboBoxClass.SelectedIndex + 1;
+                if (comboBoxClass.SelectedIndex >= 7)
+                    listBox1.SelectedIndex = comboBoxClass.SelectedIndex + 2;
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -91,8 +104,8 @@ namespace SchoolRing
                     throw new ArgumentException("Моля, изберете час!");
                 if (textBoxClassName.Text.Length == 0)
                     throw new ArgumentException("Моля, въведете име!");
-                
-                ISchoolClass schoolClass = new SchoolClass(chosenClass.Day, chosenClass.Num, chosenClass.IsPurvaSmqna,false, 0, textBoxClassName.Text, chosenClass.StartHours, chosenClass.StartMinutes, chosenClass.EndHours, chosenClass.EndMinutes);
+
+                ISchoolClass schoolClass = new SchoolClass(chosenClass.Day, chosenClass.Num, chosenClass.IsPurvaSmqna, false, 0, textBoxClassName.Text, chosenClass.StartHours, chosenClass.StartMinutes, chosenClass.EndHours, chosenClass.EndMinutes);
                 if (schoolClass.Num > 1 && Program.GetRecord(schoolClass.Day, schoolClass.Num - 1, schoolClass.IsPurvaSmqna).IsMerging)
                     Program.GetRecord(schoolClass.Day, schoolClass.Num - 1, schoolClass.IsPurvaSmqna).ResetMergeStatus();
                 if (schoolClass.Num < 7 && Program.GetRecord(schoolClass.Day, schoolClass.Num + 1, schoolClass.IsPurvaSmqna).IsMerged)
@@ -113,11 +126,17 @@ namespace SchoolRing
             }
         }
 
-        private void button1_MouseEnter(object sender, EventArgs e) =>
-             button1.FlatStyle = FlatStyle.Flat;
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.FromArgb(217, 108, 6);
+            button1.ForeColor = Color.White;
+        }
 
-        private void button1_MouseLeave(object sender, EventArgs e) =>
-            button1.FlatStyle = FlatStyle.Popup;
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.FromArgb(217, 108, 6);
+            button1.BackColor = Color.White;
+        }
 
         private void dEFAULTToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -129,6 +148,21 @@ namespace SchoolRing
         {
             Program.ChoosePathForCustomIcon(contextMenuStrip1);
             Program.ChangeCustomIcon(pictureBox3, true);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex > -1)
+            {
+                if (listBox1.SelectedIndex == 0)
+                    listBox1.SelectedIndex = 1;
+                if (listBox1.SelectedIndex == 8)
+                    listBox1.SelectedIndex = 9;
+                if (listBox1.SelectedIndex < 8)
+                    comboBoxClass.SelectedIndex = listBox1.SelectedIndex - 1;
+                else
+                    comboBoxClass.SelectedIndex = listBox1.SelectedIndex - 2;
+            }
         }
     }
 }

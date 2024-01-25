@@ -159,6 +159,9 @@ namespace SchoolRing
         public static bool allowRinging = true;
         public static int fixedMelodyLength = 0;
 
+        //ПРОМЕНЛИВА ЗА ГОЛЕМИНА НА ТЕКСТ НА ЗАПИСКИ
+        public static int textSizeForNotes = 16;
+
         //ПУБЛИЧЕН МЕТОД ЗА ДОБАВЯНЕ НА ЧАС КЪМ РЕПО
         public static void AddRecord(ISchoolClass model)
         {
@@ -185,7 +188,7 @@ namespace SchoolRing
         public static void ChangeCustomIcon(PictureBox picture, bool IsCustom)
         {
             picture.BackgroundImage = null;
-            if (IsCustom)
+            if (IsCustom&&customIconPath!=null)
             {
                 picture.BackgroundImage = Image.FromFile(customIconPath);
                 picture.SizeMode.Equals(PictureBoxSizeMode.Zoom);
@@ -199,6 +202,7 @@ namespace SchoolRing
 
         public static void ChoosePathForCustomIcon(ContextMenuStrip cms)
         {
+
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "Image Files|*.bmp;*.jpg;*.png;*.jpeg|All files (*.*)|*.*";
@@ -218,6 +222,7 @@ namespace SchoolRing
                     }
                 }
             }
+
         }
 
         public static void ClearTheSchedule()

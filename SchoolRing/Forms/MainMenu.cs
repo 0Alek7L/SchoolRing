@@ -269,7 +269,7 @@ namespace SchoolRing
             if (!Program.vdRepo.IsTodayVacation() && currentClass != null)
             {
                 INote tempNote = null;
-                labelForVacation.Text = "НАТИСНИ ТУК!";
+                labelForVacation.Text = "Натисни тук за записки!";
                 labelForVacation.Cursor = Cursors.Hand;
                 labelForVacation.Show();
                 if (Program.noteRepo.GetModels()
@@ -758,13 +758,13 @@ namespace SchoolRing
 
             if (Program.WithClassSchedule is false)
             {
-                DialogResult doYouWantToUseSchedule = MessageBox.Show("Сигурни ли сте, че желаете да използвате учебен график за учители?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult doYouWantToUseSchedule = MessageBox.Show("Сигурни ли сте, че желаете да използвате учебно разписание за учители?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (doYouWantToUseSchedule == DialogResult.Yes)
                 {
                     SchoolProgram schoolProgram = new SchoolProgram();
                     if (Program.GetModels().Any(x => x.IsFree == false))
                     {
-                        DialogResult ThereIsAlreadyASchedule = MessageBox.Show("Вече има програма с въведени часове. Желаете ли да я използвате?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult ThereIsAlreadyASchedule = MessageBox.Show("Вече има учебно разписание с въведени часове. Желаете ли да я използвате?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (ThereIsAlreadyASchedule == DialogResult.Yes)
                         {
                             Program.LastForms.Push(this);

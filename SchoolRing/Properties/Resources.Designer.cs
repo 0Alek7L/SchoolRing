@@ -223,6 +223,16 @@ namespace SchoolRing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minus {
+            get {
+                object obj = ResourceManager.GetObject("minus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap newSolidCheck {
             get {
                 object obj = ResourceManager.GetObject("newSolidCheck", resourceCulture);
@@ -297,6 +307,16 @@ namespace SchoolRing.Properties {
         internal static System.Drawing.Bitmap play_gray {
             get {
                 object obj = ResourceManager.GetObject("play-gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_sign {
+            get {
+                object obj = ResourceManager.GetObject("plus-sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -534,6 +554,16 @@ namespace SchoolRing.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_521 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_521", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Screenshot_53 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot_53", resourceCulture);
@@ -567,6 +597,16 @@ namespace SchoolRing.Properties {
         internal static System.Drawing.Bitmap Screenshot_59 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot_59", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_62 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_62", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

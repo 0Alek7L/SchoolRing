@@ -118,11 +118,17 @@ namespace SchoolRing
             }
         }
 
-        private void button1_MouseEnter(object sender, EventArgs e) =>
-            button1.FlatStyle = FlatStyle.Flat;
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.White;
+            button1.BackColor = Color.FromArgb(217, 108, 6);
+        }
 
-        private void button1_MouseLeave(object sender, EventArgs e) =>
-            button1.FlatStyle = FlatStyle.Popup;
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.White;
+            button1.ForeColor = Color.FromArgb(217, 108, 6);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
