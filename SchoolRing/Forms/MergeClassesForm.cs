@@ -54,7 +54,7 @@ namespace SchoolRing
         {
             selectedMergingClass = null;
             selectedMergedClass = null;
-            classesAvailableForMerging= new List<ISchoolClass>();
+            classesAvailableForMerging = new List<ISchoolClass>();
             listBox1.Items.Clear();
             comboBox2.Items.Clear();
             labelShowSecondClass.Text = "";
@@ -95,9 +95,9 @@ namespace SchoolRing
             if (comboBox2.SelectedIndex >= 0)
             {
                 //comboBox1_SelectedIndexChanged(sender, e);
-                button1.Enabled = true; 
+                button1.Enabled = true;
                 ISchoolClass mergingClass;
-                if (classesAvailableForMerging.Count <= 0||comboBox2.SelectedIndex>classesAvailableForMerging.Count-1)
+                if (classesAvailableForMerging.Count <= 0 || comboBox2.SelectedIndex > classesAvailableForMerging.Count - 1)
                     System.Windows.Forms.MessageBox.Show("Грешка!");
                 else
                 {
@@ -113,6 +113,17 @@ namespace SchoolRing
                     {
                         selectedMergedClass = Program.GetRecord(comboBox1.Text, 1, false);
                         labelShowSecondClass.Text = selectedMergedClass.ShowTheRecord();
+                    }
+                    foreach (var item in listBox1.Items)
+                    {
+                        if (item.ToString() == selectedMergingClass.ShowTheRecord())
+                        {
+                            listBox1.ClearSelected();
+                            int index = listBox1.Items.IndexOf(item);
+                            listBox1.SetSelected(index, true);
+                            listBox1.SetSelected(index+1, true);
+                            break;
+                        }
                     }
                 }
             }
@@ -167,7 +178,7 @@ namespace SchoolRing
                     comboBox1_SelectedIndexChanged(sender, e);
                     throw new ArgumentException("Операцията не може да бъде изпълнена! Един от часовете вече е слят.");
                 }
-                SaveTheData.SaveSchoolClasses();                
+                SaveTheData.SaveSchoolClasses();
             }
             catch (ArgumentException ex)
             {
@@ -186,5 +197,6 @@ namespace SchoolRing
             Program.ChoosePathForCustomIcon(contextMenuStrip1);
             Program.ChangeCustomIcon(pictureBox3, true);
         }
+
     }
 }
