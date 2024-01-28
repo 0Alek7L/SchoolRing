@@ -45,7 +45,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBoxAddNew = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -63,7 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddNew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClearTheCB)).BeginInit();
@@ -217,12 +217,12 @@
             this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.dateTimePicker1.CustomFormat = "  dddd   dd .MM .yyyyг.";
             this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Jura", 16F, System.Drawing.FontStyle.Bold);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(186, 309);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker1.Size = new System.Drawing.Size(383, 32);
+            this.dateTimePicker1.Size = new System.Drawing.Size(383, 33);
             this.dateTimePicker1.TabIndex = 64;
             this.dateTimePicker1.Value = new System.DateTime(2023, 11, 13, 10, 33, 26, 0);
             // 
@@ -246,11 +246,11 @@
             this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.dateTimePicker2.CustomFormat = "  dddd   dd .MM .yyyyг.";
             this.dateTimePicker2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Font = new System.Drawing.Font("Jura", 16F, System.Drawing.FontStyle.Bold);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(186, 370);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(383, 32);
+            this.dateTimePicker2.Size = new System.Drawing.Size(383, 33);
             this.dateTimePicker2.TabIndex = 66;
             this.dateTimePicker2.Value = new System.DateTime(2023, 11, 12, 16, 7, 19, 0);
             // 
@@ -266,19 +266,19 @@
             this.textBox1.TabIndex = 67;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBoxAddNew
+            // pictureBox7
             // 
-            this.pictureBoxAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBoxAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxAddNew.Image = global::SchoolRing.Properties.Resources.add;
-            this.pictureBoxAddNew.Location = new System.Drawing.Point(578, 397);
-            this.pictureBoxAddNew.Name = "pictureBoxAddNew";
-            this.pictureBoxAddNew.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxAddNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxAddNew.TabIndex = 68;
-            this.pictureBoxAddNew.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxAddNew, "Добави/Запиши промени");
-            this.pictureBoxAddNew.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::SchoolRing.Properties.Resources.add;
+            this.pictureBox7.Location = new System.Drawing.Point(587, 400);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 68;
+            this.pictureBox7.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox7, "Добави ваканция");
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox8
             // 
@@ -315,9 +315,7 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox1.Font = new System.Drawing.Font("Jura", 20.25F, System.Drawing.FontStyle.Bold);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            ""});
-            this.comboBox1.Location = new System.Drawing.Point(186, 145);
+            this.comboBox1.Location = new System.Drawing.Point(183, 138);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(386, 44);
             this.comboBox1.TabIndex = 71;
@@ -328,7 +326,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.Font = new System.Drawing.Font("Jura", 16F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
-            this.label2.Location = new System.Drawing.Point(184, 180);
+            this.label2.Location = new System.Drawing.Point(181, 173);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(386, 63);
             this.label2.TabIndex = 72;
@@ -340,7 +338,7 @@
             this.pictureBoxRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBoxRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxRemove.Image = global::SchoolRing.Properties.Resources.removeNEW;
-            this.pictureBoxRemove.Location = new System.Drawing.Point(578, 301);
+            this.pictureBoxRemove.Location = new System.Drawing.Point(587, 308);
             this.pictureBoxRemove.Name = "pictureBoxRemove";
             this.pictureBoxRemove.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -378,9 +376,9 @@
             this.pictureBoxClearTheCB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBoxClearTheCB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxClearTheCB.Image = global::SchoolRing.Properties.Resources.wired_outline_50_minus_circle;
-            this.pictureBoxClearTheCB.Location = new System.Drawing.Point(578, 151);
+            this.pictureBoxClearTheCB.Location = new System.Drawing.Point(574, 128);
             this.pictureBoxClearTheCB.Name = "pictureBoxClearTheCB";
-            this.pictureBoxClearTheCB.Size = new System.Drawing.Size(32, 33);
+            this.pictureBoxClearTheCB.Size = new System.Drawing.Size(73, 67);
             this.pictureBoxClearTheCB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxClearTheCB.TabIndex = 76;
             this.pictureBoxClearTheCB.TabStop = false;
@@ -406,7 +404,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBoxAddNew);
+            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -430,7 +428,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddNew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRemove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClearTheCB)).EndInit();
@@ -451,7 +449,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBoxAddNew;
+        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ComboBox comboBox1;

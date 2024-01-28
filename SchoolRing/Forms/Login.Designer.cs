@@ -199,13 +199,12 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.button1.Font = new System.Drawing.Font("Jura", 40F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
-            this.button1.Location = new System.Drawing.Point(173, 200);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
+            this.button1.Location = new System.Drawing.Point(197, 200);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(675, 90);
+            this.button1.Size = new System.Drawing.Size(627, 90);
             this.button1.TabIndex = 50;
             this.button1.Text = "ЗА УЧИТЕЛ";
             this.button1.UseVisualStyleBackColor = false;
@@ -217,10 +216,9 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.button2.Font = new System.Drawing.Font("Jura", 40F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
             this.button2.Location = new System.Drawing.Point(173, 362);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(675, 90);
@@ -228,8 +226,6 @@
             this.button2.Text = "ЗА УЧИЛИЩЕ";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
-            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
             // label2
             // 

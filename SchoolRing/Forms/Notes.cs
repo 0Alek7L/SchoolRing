@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -165,15 +164,8 @@ namespace SchoolRing.Forms
 
         private void UpdateLabels()
         {
-            try
-            {
-                labelClassName.Text = $"{selectedDayOfWeek} {selectedDate.ToString("dd/MM/yyyy")} {selectedClass.ShowTheRecord()}";
-                labelShowFirstDateAndTime.Text = $"{selectedDayOfWeek} {selectedDate.ToString("dd/MM/yyyy")}";
-            }
-            catch
-            {
-                //Sth
-            }
+            labelClassName.Text = $"{selectedDayOfWeek} {selectedDate.ToString("dd/MM/yyyy")} {selectedClass.ShowTheRecord()}";
+            labelShowFirstDateAndTime.Text = $"{selectedDayOfWeek} {selectedDate.ToString("dd/MM/yyyy")}";
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
@@ -207,7 +199,7 @@ namespace SchoolRing.Forms
                 {
                     FontFamily fontFamily = new FontFamily("Jura");
                     textBoxNote.Font = new Font(fontFamily, float.Parse(textBox1.Text));
-                    Program.textSizeForNotes = int.Parse(textBox1.Text);
+                    Program.textSizeForNotes=int.Parse(textBox1.Text);
                 }
             }
         }
@@ -309,22 +301,14 @@ namespace SchoolRing.Forms
 
         private void textBoxSearchInput_TextChanged(object sender, EventArgs e)
         {
-            try
+            listBoxShowSearch.Items.Clear();
+            pictureBoxEditSearchNote.Hide();
+            if (!string.IsNullOrEmpty(textBoxSearchInput.Text))
             {
-                listBoxShowSearch.Items.Clear();
-                pictureBoxEditSearchNote.Hide();
-                if (!string.IsNullOrEmpty(textBoxSearchInput.Text))
+                if (radioButtonContent.Checked)
                 {
-                    if (!radioButtonClassOrParalelka.Checked && !radioButtonContent.Checked)
-                        throw new ArgumentException("Моля, изберете критерии за търсене на записки!");
-                    if (radioButtonContent.Checked)
-                    {
-                        notes = Program.noteRepo.GetModels().Where(n => n.Text.Contains(textBoxSearchInput.Text)).ToArray();
-                    }
-                    else if (radioButtonClassOrParalelka.Checked)
-                    {
-                        notes = Program.noteRepo.ClassName(textBoxSearchInput.Text).ToArray();
-                    }
+                    notes = Program.noteRepo.GetModels().Where(n => n.Text.Contains(textBoxSearchInput.Text)).ToArray();
+
                     if (notes.Length > 0)
                     {
                         notes.OrderBy(n => n.Date)
@@ -343,9 +327,7 @@ namespace SchoolRing.Forms
                                 case DayOfWeek.Thursday: day = TimeForClockAndText.dayOfWeekThursday; break;
                                 case DayOfWeek.Friday: day = TimeForClockAndText.dayOfWeekFriday; break;
                             }
-                            int stringIndex = 0;
-                            if (radioButtonContent.Checked)
-                                stringIndex = note.Text.IndexOf(textBoxSearchInput.Text);
+                            int stringIndex = note.Text.IndexOf(textBoxSearchInput.Text);
                             for (int i = 5; i > 0; i--)
                             {
                                 if (note.Text.Length >= stringIndex + i)
@@ -362,21 +344,10 @@ namespace SchoolRing.Forms
                     }
                     else
                     {
-                        if (radioButtonClassOrParalelka.Checked)
-                        {
-                            listBoxShowSearch.Items.Add($"Не са намерени записки за часове с \"{textBoxSearchInput.Text}\" клас/паралелка!");
-                            listBoxShowSearch.Items.Add($"Ако записките са за свободен час моля, въведете \"0\"!");
-                        }
-                        else
-                            listBoxShowSearch.Items.Add($"Не са намерени записки, съдържащи \"{textBoxSearchInput.Text}\"!");
+                        listBoxShowSearch.Items.Add($"Не са намерени записки, съдържащи \"{textBoxSearchInput.Text}\"!");
                         pictureBoxEditSearchNote.Hide();
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                textBoxSearchInput.Text = "";
             }
         }
 
@@ -418,13 +389,8 @@ namespace SchoolRing.Forms
         private void radioButtonClassOrParalelka_CheckedChanged(object sender, EventArgs e)
         {
             textBoxSearchInput.Text = "";
-            if (radioButtonClassOrParalelka.Checked)
-                MessageBox.Show("Паралелките се въвеждат с главна буква! Ако записките са за свободен час моля, въведете \"0\"!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-        private void radioButtonContent_CheckedChanged(object sender, EventArgs e)
-        {
-            textBoxSearchInput.Text = "";
-        }
+
         private void pictureBoxLowerTextSize_Click(object sender, EventArgs e)
         {
             int temp;
@@ -449,7 +415,5 @@ namespace SchoolRing.Forms
             temp++;
             textBox1.Text = temp.ToString();
         }
-
-
     }
 }

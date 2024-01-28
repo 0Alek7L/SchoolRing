@@ -15,6 +15,5 @@ namespace SchoolRing.Repository
         T FirstModel(DateTime _date, int _classNum, bool _purva);
         void UpdateModel(T model);
         bool IsThereAModel(DateTime _date, int _classNum, bool _purva);
-        List<INote> ClassName(string _name);
     }
 }

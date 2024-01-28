@@ -255,7 +255,7 @@
             this.labelProgram.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelProgram.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProgram.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelProgram.Location = new System.Drawing.Point(367, 148);
+            this.labelProgram.Location = new System.Drawing.Point(541, 148);
             this.labelProgram.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProgram.Name = "labelProgram";
             this.labelProgram.Size = new System.Drawing.Size(141, 51);
@@ -271,12 +271,12 @@
             this.labelChangeClassLength.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelChangeClassLength.Font = new System.Drawing.Font("Jura", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelChangeClassLength.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
-            this.labelChangeClassLength.Location = new System.Drawing.Point(25, 438);
+            this.labelChangeClassLength.Location = new System.Drawing.Point(28, 438);
             this.labelChangeClassLength.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelChangeClassLength.Name = "labelChangeClassLength";
             this.labelChangeClassLength.Size = new System.Drawing.Size(590, 39);
             this.labelChangeClassLength.TabIndex = 61;
-            this.labelChangeClassLength.Text = "Промяна на продължителността на чаовете";
+            this.labelChangeClassLength.Text = "ПРОМЯНА НА ПРОДЪЛЖИТЕЛНОСТ НА ЧАСОВЕТЕ";
             this.labelChangeClassLength.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelChangeClassLength.Click += new System.EventHandler(this.labelChangeClassLength_Click);
             this.labelChangeClassLength.MouseEnter += new System.EventHandler(this.labelChangeClassLength_MouseEnter);
@@ -360,7 +360,7 @@
             this.pictureBoxProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxProgram.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxProgram.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxProgram.Image")));
-            this.pictureBoxProgram.Location = new System.Drawing.Point(395, 85);
+            this.pictureBoxProgram.Location = new System.Drawing.Point(569, 85);
             this.pictureBoxProgram.Name = "pictureBoxProgram";
             this.pictureBoxProgram.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxProgram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -534,7 +534,7 @@
             this.labelMergeClasses.Name = "labelMergeClasses";
             this.labelMergeClasses.Size = new System.Drawing.Size(365, 39);
             this.labelMergeClasses.TabIndex = 69;
-            this.labelMergeClasses.Text = "Сливане на часове";
+            this.labelMergeClasses.Text = "СЛИВАНЕ НА ЧАСОВЕ";
             this.labelMergeClasses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelMergeClasses.Click += new System.EventHandler(this.labelMergeClasses_Click);
             this.labelMergeClasses.MouseEnter += new System.EventHandler(this.labelMergeClasses_MouseEnter);
@@ -546,7 +546,7 @@
             this.labelMelody.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelMelody.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMelody.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelMelody.Location = new System.Drawing.Point(554, 148);
+            this.labelMelody.Location = new System.Drawing.Point(213, 148);
             this.labelMelody.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMelody.Name = "labelMelody";
             this.labelMelody.Size = new System.Drawing.Size(108, 30);
@@ -560,7 +560,7 @@
             this.pictureBoxMelodyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxMelodyButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxMelodyButton.Image = global::SchoolRing.Properties.Resources.wired_outline_43_music_note2;
-            this.pictureBoxMelodyButton.Location = new System.Drawing.Point(569, 88);
+            this.pictureBoxMelodyButton.Location = new System.Drawing.Point(225, 85);
             this.pictureBoxMelodyButton.Name = "pictureBoxMelodyButton";
             this.pictureBoxMelodyButton.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxMelodyButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -621,7 +621,7 @@
             this.labelVacations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVacations.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVacations.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelVacations.Location = new System.Drawing.Point(208, 148);
+            this.labelVacations.Location = new System.Drawing.Point(378, 148);
             this.labelVacations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelVacations.Name = "labelVacations";
             this.labelVacations.Size = new System.Drawing.Size(114, 30);
@@ -635,7 +635,7 @@
             this.pictureBoxVacations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.pictureBoxVacations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxVacations.Image = global::SchoolRing.Properties.Resources.system_regular_23_calendar;
-            this.pictureBoxVacations.Location = new System.Drawing.Point(225, 85);
+            this.pictureBoxVacations.Location = new System.Drawing.Point(395, 85);
             this.pictureBoxVacations.Name = "pictureBoxVacations";
             this.pictureBoxVacations.Size = new System.Drawing.Size(82, 69);
             this.pictureBoxVacations.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -693,7 +693,7 @@
             this.labelCustomClasses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelCustomClasses.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCustomClasses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(237)))));
-            this.labelCustomClasses.Location = new System.Drawing.Point(543, 277);
+            this.labelCustomClasses.Location = new System.Drawing.Point(543, 275);
             this.labelCustomClasses.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCustomClasses.Name = "labelCustomClasses";
             this.labelCustomClasses.Size = new System.Drawing.Size(128, 50);

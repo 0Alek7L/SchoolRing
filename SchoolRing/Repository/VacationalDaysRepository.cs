@@ -30,13 +30,6 @@ namespace SchoolRing.Repository
             else
                 return null;
         }
-        public IVacationalDays GetModel(DateTime start, DateTime end, string name)
-        {
-            if (_days.First(x => x.StartDate == start && x.EndDate == end&&x.Argument==name) != null)
-                return _days.First(x => x.StartDate == start && x.EndDate == end && x.Argument == name);
-            else
-                return null;
-        }
 
         public bool IsThereAModel(DateTime start, DateTime end)
         {
@@ -53,48 +46,13 @@ namespace SchoolRing.Repository
             else
                 return false;
         }
-        public bool IsThereAModel(DateTime start, DateTime end, DateTime oldStart, DateTime oldEnd, string name)
-        {
-            IVacationalDays temp = GetModel(oldStart, oldEnd, name);
-            _days.Remove(temp);
-            if (_days.Any(x => x.EndDate > start && x.StartDate < start))
-            {
-                _days.Add(temp);
-                return true;
-            }
-            else if (_days.Any(x => x.EndDate > end && x.StartDate < end))
-            {
-                _days.Add(temp);
-                return true;
-            }
-            else if (_days.Any(x => x.StartDate == start && x.EndDate == end))
-            {
-                _days.Add(temp);
-                return true;
-            }
-            else if (_days.Any(x => x.StartDate > start && x.EndDate <= end))
-            {
-                _days.Add(temp);
-                return true;
-            }
-            else if (_days.Any(x => x.StartDate == start || x.EndDate == end))
-            {
-                _days.Add(temp);
-                return true;
-            }
-            else
-            {
-                _days.Add(temp);
-                return false;
-            }
-        }
 
         public bool IsTodayVacation()
         {
             DateTime dateTime = DateTime.Now;
-            if (_days.Any(x => x.StartDate <= dateTime.Date && x.EndDate >= dateTime.Date))
+            if(_days.Any(x=>x.StartDate<=dateTime.Date && x.EndDate>=dateTime.Date))
                 return true;
-            else if (_days.Any(x => x.StartDate.Date == dateTime.Date || x.EndDate.Date == dateTime.Date))
+            else if(_days.Any(x => x.StartDate.Date==dateTime.Date||x.EndDate.Date==dateTime.Date))
                 return true;
             else
                 return false;
