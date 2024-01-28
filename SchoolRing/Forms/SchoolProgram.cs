@@ -31,6 +31,7 @@ namespace SchoolRing
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 200;
             timer.Tick += Timer_Tick;
+            //timer.Tick += Timer_TickForMovingLabel;
             timer.Start();
             Program.ShowTheCurrentIcon(pictureBox3);
             if (radioButtonFirst.Checked || radioButtonSecond.Checked)
@@ -56,12 +57,27 @@ namespace SchoolRing
                 listBoxWednesday.Hide();
                 listBoxThursday.Hide();
                 listBoxFriday.Hide();
+                temp = "Изберете учебна смяна.";
+                labelTextSuggestion.Text = temp;
+                pictureBox7.Hide();
+                pictureBox8.Hide();
+                labelDOW.Hide();
             }
         }
+
+        private void Timer_TickForMovingLabel(object sender, EventArgs e)
+        {
+            //if(labelTextSuggestion.Right<=panel1.Left)
+            //{
+            //    labelTextSuggestion.Left = panel1.Right;
+            //}
+            //labelTextSuggestion.Left -= 10;
+        }
+
         private void ShowMessageForIdiots()
         {
             Program.isMessageShown = true;
-            MessageBox.Show("В това меню трябва да изберете УЧЕБНА СМЯНА, ДЕН и ЧАС!");
+            MessageBox.Show("В това меню трябва да изберете УЧЕБНА СМЯНА, ДЕН и ЧАС за да попълните разписанието!");
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -130,8 +146,8 @@ namespace SchoolRing
         {
             isFree = false;
         }
-
-        private void buttonSaveRecord_Click(object sender, EventArgs e)
+        string temp = "";
+        private async void buttonSaveRecord_Click(object sender, EventArgs e)
         {
             try
             {
@@ -158,6 +174,15 @@ namespace SchoolRing
                     ShowCheck();
                 }
                 comboBox1ClassNumber.SelectedIndex = -1;
+                comboBoxClassGrade.SelectedIndex = -1;
+                comboBoxClassParalelka.SelectedIndex = -1;
+                temp = "Записът е успешен!";
+                labelTextSuggestion.Text = temp;
+                await Task.Delay(2000);
+                if (!IsThereASelectedIndexInListbox())
+                    temp = "Натиснете на листа с часовете за съответния ден, за който искате да попълните разписание.";
+                labelTextSuggestion.Text = temp;
+
             }
             catch (FormatException)
             {
@@ -257,6 +282,10 @@ namespace SchoolRing
         private void radioButtonFirst_CheckedChanged(object sender, EventArgs e)
         {
 
+            pictureBox7.Show();
+            pictureBox8.Show();
+            labelDOW.Show();
+
             comboBox1ClassNumber.Show();
             comboBoxClassGrade.Show();
             comboBoxClassParalelka.Show();
@@ -266,7 +295,9 @@ namespace SchoolRing
             listBoxWednesday.Show();
             listBoxThursday.Show();
             listBoxFriday.Show();
-
+            if (!IsThereASelectedIndexInListbox())
+                temp = "Натиснете на листа с часовете за съответния ден, за който искате да попълните разписание.";
+            labelTextSuggestion.Text = temp;
             if (radioButtonFirst.Checked)
             {
                 radioButtonFirst.ForeColor = Color.White;
@@ -307,6 +338,7 @@ namespace SchoolRing
         {
             if (listBoxMonday.SelectedIndex == 0)
                 listBoxMonday.SelectedIndex = 1;
+            int temp = listBoxMonday.SelectedIndex;
             if (listBoxTuesday.SelectedItem != null)
                 listBoxTuesday.SelectedIndex = -1;
             if (listBoxWednesday.SelectedItem != null)
@@ -315,6 +347,7 @@ namespace SchoolRing
                 listBoxThursday.SelectedIndex = -1;
             if (listBoxFriday.SelectedItem != null)
                 listBoxFriday.SelectedIndex = -1;
+            listBoxMonday.SelectedIndex = temp;
             if (list.SelectedIndex != 0 && list.SelectedIndex != -1)
                 FillComboBoxesWithSelectedItemInListBox("ПОНЕДЕЛНИК", listBoxMonday.SelectedIndex);
         }
@@ -322,6 +355,7 @@ namespace SchoolRing
         {
             if (listBoxTuesday.SelectedIndex == 0)
                 listBoxTuesday.SelectedIndex = 1;
+            int temp = listBoxTuesday.SelectedIndex;
             if (listBoxMonday.SelectedItem != null)
                 listBoxMonday.SelectedIndex = -1;
             if (listBoxWednesday.SelectedItem != null)
@@ -330,6 +364,7 @@ namespace SchoolRing
                 listBoxThursday.SelectedIndex = -1;
             if (listBoxFriday.SelectedItem != null)
                 listBoxFriday.SelectedIndex = -1;
+            listBoxTuesday.SelectedIndex = temp;
             if (list.SelectedIndex != 0 && list.SelectedIndex != -1)
                 FillComboBoxesWithSelectedItemInListBox("ВТОРНИК", listBoxTuesday.SelectedIndex);
         }
@@ -338,6 +373,7 @@ namespace SchoolRing
         {
             if (listBoxWednesday.SelectedIndex == 0)
                 listBoxWednesday.SelectedIndex = 1;
+            int temp = listBoxWednesday.SelectedIndex;
             if (listBoxMonday.SelectedItem != null)
                 listBoxMonday.SelectedIndex = -1;
             if (listBoxTuesday.SelectedItem != null)
@@ -346,6 +382,7 @@ namespace SchoolRing
                 listBoxThursday.SelectedIndex = -1;
             if (listBoxFriday.SelectedItem != null)
                 listBoxFriday.SelectedIndex = -1;
+            listBoxWednesday.SelectedIndex = temp;
             if (list.SelectedIndex != 0 && list.SelectedIndex != -1)
                 FillComboBoxesWithSelectedItemInListBox("СРЯДА", listBoxWednesday.SelectedIndex);
 
@@ -355,6 +392,7 @@ namespace SchoolRing
         {
             if (listBoxThursday.SelectedIndex == 0)
                 listBoxThursday.SelectedIndex = 1;
+            int temp = listBoxThursday.SelectedIndex;
             if (listBoxMonday.SelectedItem != null)
                 listBoxMonday.SelectedIndex = -1;
             if (listBoxTuesday.SelectedItem != null)
@@ -363,6 +401,7 @@ namespace SchoolRing
                 listBoxWednesday.SelectedIndex = -1;
             if (listBoxFriday.SelectedItem != null)
                 listBoxFriday.SelectedIndex = -1;
+            listBoxThursday.SelectedIndex = temp;
             if (list.SelectedIndex != 0 && list.SelectedIndex != -1)
                 FillComboBoxesWithSelectedItemInListBox("ЧЕТВЪРТЪК", listBoxThursday.SelectedIndex);
 
@@ -372,6 +411,7 @@ namespace SchoolRing
         {
             if (listBoxFriday.SelectedIndex == 0)
                 listBoxFriday.SelectedIndex = 1;
+            int temp = listBoxFriday.SelectedIndex;
             if (listBoxMonday.SelectedItem != null)
                 listBoxMonday.SelectedIndex = -1;
             if (listBoxTuesday.SelectedItem != null)
@@ -380,6 +420,7 @@ namespace SchoolRing
                 listBoxWednesday.SelectedIndex = -1;
             if (listBoxThursday.SelectedItem != null)
                 listBoxThursday.SelectedIndex = -1;
+            listBoxFriday.SelectedIndex = temp;
             if (list.SelectedIndex != 0 && list.SelectedIndex != -1)
                 FillComboBoxesWithSelectedItemInListBox("ПЕТЪК", listBoxFriday.SelectedIndex);
         }
@@ -422,11 +463,15 @@ namespace SchoolRing
                 comboBoxClassGrade.SelectedIndex = selectedIndexGrade;
                 comboBoxClassParalelka.SelectedIndex = selectedIndexParalelka;
                 checkBox1.Checked = false;
+                temp = "Изберете клас и паралелка от падащите менюта.";
+                labelTextSuggestion.Text = temp;
             }
             else
             {
                 comboBox1ClassNumber.SelectedIndex = num - 1;
                 checkBox1.Checked = true;
+                temp = "Този час е свободен. За да промените състоянието му, моля, премахнете тикчето \"свободен\".";
+                labelTextSuggestion.Text = temp;
             }
         }
 
@@ -469,6 +514,8 @@ namespace SchoolRing
                 case "ЧЕТВЪРТЪК": UpdateLabelDayAndSetVariable(3); break;
                 case "ПЕТЪК": UpdateLabelDayAndSetVariable(4); ; break;
             }
+            comboBox1ClassNumber_SelectedIndexChanged(sender, e);
+
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
@@ -481,6 +528,7 @@ namespace SchoolRing
                 case "ЧЕТВЪРТЪК": UpdateLabelDayAndSetVariable(5); break;
                 case "ПЕТЪК": UpdateLabelDayAndSetVariable(1); ; break;
             }
+            comboBox1ClassNumber_SelectedIndexChanged(sender, e);
         }
 
         private void ChangeColorOfListBox()
@@ -566,7 +614,7 @@ namespace SchoolRing
         {
             label4.ForeColor = Color.FromArgb(34, 146, 164);
             label4.BackColor = Color.White;
-            label4.Font = new Font(label4.Font, FontStyle.Bold);
+            //label4.Font = new Font(label4.Font, FontStyle.Bold);
             label4.BorderStyle = BorderStyle.Fixed3D;
         }
 
@@ -574,7 +622,7 @@ namespace SchoolRing
         {
             label4.BackColor = Color.FromArgb(34, 146, 164);
             label4.ForeColor = Color.White;
-            label4.Font = new Font(label4.Font, FontStyle.Regular);
+            //label4.Font = new Font(label4.Font, FontStyle.Regular);
             label4.BorderStyle = BorderStyle.FixedSingle;
 
         }
@@ -617,10 +665,20 @@ namespace SchoolRing
                 comboBoxClassParalelka.Enabled = false;
                 comboBoxClassParalelka.BackColor = Color.LightGray;
                 checkBox1.Font = new Font(checkBox1.Font, FontStyle.Bold);
-
+                if (IsThereASelectedIndexInListbox())
+                    temp = "Този час е свободен. За да промените състоянието му, моля, премахнете тикчето \"свободен\".";
+                else
+                    temp = "Натиснете на листа с часовете за съответния ден, за който искате да попълните разписание.";
+                labelTextSuggestion.Text = temp;
             }
             else
             {
+                if (IsThereASelectedIndexInListbox())
+                    temp = "Изберете клас и паралелка от падащите менюта.";
+                else
+                    temp = "Натиснете на листа с часовете за съответния ден, за който искате да попълните разписание.";
+                labelTextSuggestion.Text = temp;
+                
                 isFree = false;
                 comboBoxClassGrade.Enabled = true;
                 comboBoxClassGrade.BackColor = Color.FromArgb(189, 191, 9);
@@ -669,6 +727,46 @@ namespace SchoolRing
         {
             buttonClearTheRepo.BackColor = Color.FromArgb(34, 146, 164);
             buttonClearTheRepo.ForeColor = Color.White;
+        }
+
+        private bool IsThereASelectedIndexInListbox()
+        {
+            if (listBoxMonday.SelectedItems.Count == 0 && listBoxTuesday.SelectedItems.Count == 0 &&
+                listBoxWednesday.SelectedItems.Count == 0 && listBoxThursday.SelectedItems.Count == 0 && listBoxFriday.SelectedItems.Count == 0)
+                return false;
+            else
+                return true;
+        }
+
+        private void comboBox1ClassNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1ClassNumber.SelectedIndex != -1)
+            {
+                if (labelDOW.Text == TimeForClockAndText.dayOfWeekMonday)
+                {
+                    listBoxMonday.SelectedIndex = int.Parse(comboBox1ClassNumber.SelectedItem.ToString());
+                }
+                else if (labelDOW.Text == TimeForClockAndText.dayOfWeekTuesday)
+                {
+                    listBoxTuesday.SelectedIndex = int.Parse(comboBox1ClassNumber.SelectedItem.ToString());
+
+                }
+                else if (labelDOW.Text == TimeForClockAndText.dayOfWeekWednesday)
+                {
+                    listBoxWednesday.SelectedIndex = int.Parse(comboBox1ClassNumber.SelectedItem.ToString());
+
+                }
+                else if (labelDOW.Text == TimeForClockAndText.dayOfWeekThursday)
+                {
+                    listBoxThursday.SelectedIndex = int.Parse(comboBox1ClassNumber.SelectedItem.ToString());
+
+                }
+                else if (labelDOW.Text == TimeForClockAndText.dayOfWeekFriday)
+                {
+                    listBoxFriday.SelectedIndex = int.Parse(comboBox1ClassNumber.SelectedItem.ToString());
+
+                }
+            }
         }
     }
 }

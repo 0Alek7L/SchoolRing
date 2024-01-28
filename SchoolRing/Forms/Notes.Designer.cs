@@ -509,19 +509,17 @@
             this.radioButtonContent.TabIndex = 93;
             this.radioButtonContent.Text = "Съдържание";
             this.radioButtonContent.UseVisualStyleBackColor = true;
-            this.radioButtonContent.CheckedChanged += new System.EventHandler(this.radioButtonClassOrParalelka_CheckedChanged);
+            this.radioButtonContent.CheckedChanged += new System.EventHandler(this.radioButtonContent_CheckedChanged);
             // 
             // radioButtonClassOrParalelka
             // 
             this.radioButtonClassOrParalelka.AutoSize = true;
-            this.radioButtonClassOrParalelka.Checked = true;
             this.radioButtonClassOrParalelka.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonClassOrParalelka.Font = new System.Drawing.Font("Jura", 17F, System.Drawing.FontStyle.Bold);
             this.radioButtonClassOrParalelka.Location = new System.Drawing.Point(297, 12);
             this.radioButtonClassOrParalelka.Name = "radioButtonClassOrParalelka";
             this.radioButtonClassOrParalelka.Size = new System.Drawing.Size(223, 34);
             this.radioButtonClassOrParalelka.TabIndex = 92;
-            this.radioButtonClassOrParalelka.TabStop = true;
             this.radioButtonClassOrParalelka.Text = "Клас/Паралелка";
             this.radioButtonClassOrParalelka.UseVisualStyleBackColor = true;
             this.radioButtonClassOrParalelka.CheckedChanged += new System.EventHandler(this.radioButtonClassOrParalelka_CheckedChanged);

@@ -76,14 +76,26 @@ namespace SchoolRing
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            button1.ForeColor = Color.FromArgb(34, 146, 164);
-            button1.BackColor = Color.FromArgb(245, 239, 237);
+            button1.BackColor = Color.FromArgb(34, 146, 164);
+            button1.ForeColor = Color.White;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            button1.BackColor = Color.FromArgb(34, 146, 164);
-            button1.ForeColor = Color.FromArgb(245, 239, 237);
+            button1.ForeColor = Color.FromArgb(34, 146, 164);
+            button1.BackColor = Color.White;
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.ForeColor = Color.White;
+            button2.BackColor = Color.FromArgb(34, 146, 164);
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.White;
+            button2.ForeColor = Color.FromArgb(34, 146, 164);
         }
     }
 }

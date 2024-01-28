@@ -48,7 +48,7 @@
             this.radioButtonSecond = new System.Windows.Forms.RadioButton();
             this.comboBoxClassParalelka = new System.Windows.Forms.ComboBox();
             this.labelDOW = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelTextSuggestion = new System.Windows.Forms.Label();
             this.comboBoxClassGrade = new System.Windows.Forms.ComboBox();
             this.comboBox1ClassNumber = new System.Windows.Forms.ComboBox();
             this.listBoxMonday = new System.Windows.Forms.ListBox();
@@ -70,6 +70,7 @@
             this.pictureBoxGreenCheck = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -80,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreenCheck)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -336,20 +338,19 @@
             this.labelDOW.Text = "ПОНЕДЕЛНИК";
             this.labelDOW.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // labelTextSuggestion
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelTextSuggestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(44, 464);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(946, 25);
-            this.label5.TabIndex = 67;
-            this.label5.Text = "НАТИСНЕТЕ НА ЛИСТА С ЧАСОВЕТЕ ЗА СЪОТВЕТНИЯ ДЕН, ЗА КОЙТО ИСКАТЕ ДА ВЪВЕДЕТЕ ГРАФ" +
-    "ИК";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelTextSuggestion.BackColor = System.Drawing.Color.Transparent;
+            this.labelTextSuggestion.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTextSuggestion.ForeColor = System.Drawing.Color.Gray;
+            this.labelTextSuggestion.Location = new System.Drawing.Point(0, 1);
+            this.labelTextSuggestion.Name = "labelTextSuggestion";
+            this.labelTextSuggestion.Size = new System.Drawing.Size(1027, 25);
+            this.labelTextSuggestion.TabIndex = 67;
+            this.labelTextSuggestion.Text = "Изберете учебна смяна";
+            this.labelTextSuggestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxClassGrade
             // 
@@ -407,6 +408,7 @@
             this.comboBox1ClassNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBox1ClassNumber.Size = new System.Drawing.Size(134, 33);
             this.comboBox1ClassNumber.TabIndex = 69;
+            this.comboBox1ClassNumber.SelectedIndexChanged += new System.EventHandler(this.comboBox1ClassNumber_SelectedIndexChanged);
             this.comboBox1ClassNumber.Click += new System.EventHandler(this.comboBox1ClassNumber_Click_1);
             // 
             // listBoxMonday
@@ -575,7 +577,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSaveRecord.BackColor = System.Drawing.Color.White;
             this.buttonSaveRecord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSaveRecord.Font = new System.Drawing.Font("Jura", 28F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.buttonSaveRecord.Font = new System.Drawing.Font("Jura", 28F, System.Drawing.FontStyle.Bold);
             this.buttonSaveRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(108)))), ((int)(((byte)(6)))));
             this.buttonSaveRecord.Location = new System.Drawing.Point(369, 491);
             this.buttonSaveRecord.Name = "buttonSaveRecord";
@@ -625,7 +627,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonContinueToMainMenu.BackColor = System.Drawing.Color.White;
             this.buttonContinueToMainMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonContinueToMainMenu.Font = new System.Drawing.Font("Jura", 27F, System.Drawing.FontStyle.Bold);
+            this.buttonContinueToMainMenu.Font = new System.Drawing.Font("Jura", 28F, System.Drawing.FontStyle.Bold);
             this.buttonContinueToMainMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(191)))), ((int)(((byte)(9)))));
             this.buttonContinueToMainMenu.Location = new System.Drawing.Point(798, 491);
             this.buttonContinueToMainMenu.Name = "buttonContinueToMainMenu";
@@ -644,13 +646,13 @@
             this.buttonClearTheRepo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.buttonClearTheRepo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClearTheRepo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClearTheRepo.Font = new System.Drawing.Font("Jura", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.buttonClearTheRepo.Font = new System.Drawing.Font("Jura", 14F, System.Drawing.FontStyle.Bold);
             this.buttonClearTheRepo.ForeColor = System.Drawing.Color.White;
-            this.buttonClearTheRepo.Location = new System.Drawing.Point(96, 561);
+            this.buttonClearTheRepo.Location = new System.Drawing.Point(83, 561);
             this.buttonClearTheRepo.Name = "buttonClearTheRepo";
-            this.buttonClearTheRepo.Size = new System.Drawing.Size(153, 62);
+            this.buttonClearTheRepo.Size = new System.Drawing.Size(177, 62);
             this.buttonClearTheRepo.TabIndex = 88;
-            this.buttonClearTheRepo.Text = "Изчисти разписанието";
+            this.buttonClearTheRepo.Text = "ИЗЧИСТИ РАЗПИСАНИЕТО";
             this.buttonClearTheRepo.UseVisualStyleBackColor = false;
             this.buttonClearTheRepo.Click += new System.EventHandler(this.buttonClearTheRepo_Click);
             this.buttonClearTheRepo.MouseEnter += new System.EventHandler(this.buttonClearTheRepo_MouseEnter);
@@ -663,11 +665,11 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(146)))), ((int)(((byte)(164)))));
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Jura", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Jura", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(798, 561);
+            this.label4.Location = new System.Drawing.Point(797, 558);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(218, 60);
+            this.label4.Size = new System.Drawing.Size(218, 65);
             this.label4.TabIndex = 89;
             this.label4.Text = "Продължи без уч. разписание\r\n";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -680,7 +682,7 @@
             this.pictureBoxGreenCheck.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxGreenCheck.Image = global::SchoolRing.Properties.Resources.gc2;
-            this.pictureBoxGreenCheck.Location = new System.Drawing.Point(655, 491);
+            this.pictureBoxGreenCheck.Location = new System.Drawing.Point(657, 491);
             this.pictureBoxGreenCheck.Name = "pictureBoxGreenCheck";
             this.pictureBoxGreenCheck.Size = new System.Drawing.Size(62, 60);
             this.pictureBoxGreenCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -711,6 +713,14 @@
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 100;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelTextSuggestion);
+            this.panel1.Location = new System.Drawing.Point(0, 462);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1027, 26);
+            this.panel1.TabIndex = 92;
+            // 
             // SchoolProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -736,7 +746,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox1ClassNumber);
             this.Controls.Add(this.comboBoxClassGrade);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.labelDOW);
             this.Controls.Add(this.comboBoxClassParalelka);
             this.Controls.Add(this.radioButtonSecond);
@@ -751,6 +760,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SchoolProgram";
@@ -766,6 +776,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreenCheck)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -787,7 +798,7 @@
         private System.Windows.Forms.RadioButton radioButtonSecond;
         private System.Windows.Forms.ComboBox comboBoxClassParalelka;
         private System.Windows.Forms.Label labelDOW;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelTextSuggestion;
         private System.Windows.Forms.ComboBox comboBoxClassGrade;
         private System.Windows.Forms.ComboBox comboBox1ClassNumber;
         private System.Windows.Forms.ListBox listBoxMonday;
@@ -813,5 +824,6 @@
         private System.Windows.Forms.ToolStripMenuItem cUSTOMToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
